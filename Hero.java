@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 
 /**
@@ -39,7 +38,7 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w")) {
+        if (Greenfoot.isKeyDown("w") && (isTouching(Tile.class))) {
             velocityY = -10;
         }
 
