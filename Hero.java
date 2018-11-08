@@ -13,7 +13,7 @@ public class Hero extends Mover {
     public Hero() {
         super();
         gravity = 9.8;
-        acc = 0.6;
+        acc = 0.61;
         drag = 0.8;
         setImage("p1.png");
     }
