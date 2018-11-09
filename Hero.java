@@ -9,7 +9,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    private  int pause = 30;
+    private  int pause = 10;
 
     public Hero() {
         super();
