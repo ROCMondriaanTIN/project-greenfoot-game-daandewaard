@@ -9,7 +9,8 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    private  int pause = 10;
+    private boolean geraakt = false;
+    private  int pause = 100;
 
     public Hero() {
         super();
@@ -33,21 +34,26 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 Greenfoot.playSound("death.wav");
-                setImage("p1_hurt.png");
-                if (pause != 0) {
+                
+                while(pause != 0) {
+                    geraakt = true;
+                    setImage("p1_hurt.png");
     pause--;
     return;
 }
          
-                getWorld().removeObject(this);
-                break;
+                setLocation(300, 200);
+                setImage("p1.png");
             }
+            geraakt = false;
+            
         }
     }
 
     public void handleInput() {
+        if (geraakt == false){
         if (Greenfoot.isKeyDown("w") && (isTouching(Tile.class))) {
-            velocityY = -10;
+            velocityY = -15;
         }
 
         if (Greenfoot.isKeyDown("a")) {
@@ -56,6 +62,7 @@ public class Hero extends Mover {
             velocityX = 2;
         }
     }
+}
 
     public int getWidth() {
         return getImage().getWidth();
