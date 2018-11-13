@@ -145,7 +145,7 @@ public class Hero extends Mover {
         } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 2;
             animateRight();
-            System.out.println(frame);
+            
         }
     }
     public void animateRight(){
