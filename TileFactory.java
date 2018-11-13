@@ -13,6 +13,8 @@ public class TileFactory extends Hero  {
      */
     public static Tile createTile(int mapIcon) {
         Tile tile;
+        Tile tileid;
+        int tilenumber = 0;
         
         
         switch (mapIcon) {
@@ -20,21 +22,25 @@ public class TileFactory extends Hero  {
                 tile = new Tile("box.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 canJump = true;
+              
                 break;
             case 2:
                 tile = new Tile("boxAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 canJump = true;
+          
                 break;
             case 3:
                 tile = new Tile("boxCoin.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 canJump = true;
+               
                 break;
             case 4:
                 tile = new Tile("boxCoin_disabled.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 canJump = true;
+                
                 break;
             case 5:
                 tile = new Tile("boxCoinAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -235,12 +241,13 @@ public class TileFactory extends Hero  {
                 break;
                 case 45:
                 tile  = new Tile("liquidWaterTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                
+               
          canJump = false;
                 break;
                 case 46:
                 tile = new Tile("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-
+                
+               
              canJump = false;
                 break;
                 case 47:
@@ -271,6 +278,12 @@ public class TileFactory extends Hero  {
                canJump = false;
                 break;
         }
+        Tile.tileNum = mapIcon;
+
         return tile;
+        
+        
+        
     }
+    
 }

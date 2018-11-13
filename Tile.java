@@ -7,11 +7,16 @@ import greenfoot.*;
  */
 public class Tile extends Actor {
 
+    static int tileNumGet;
+
     public boolean isSolid = false;
     
     private static int id;
     public int _id;
     public boolean canJump;
+    public static int tileNum;
+    public static boolean water;
+    
 
     /**
      * Contructor of the tile. Creates a tile based on image, width and height
@@ -31,10 +36,18 @@ public class Tile extends Actor {
         id++;
     }
 
+    Tile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+
     @Override
     public String toString() {
         return "id: " + _id + "\n"
                 + "X: " + getX() + "\n"
                 + "Y: " + getY();
+    }
+    public int tileNumGet() {
+      return tileNum;
     }
 }

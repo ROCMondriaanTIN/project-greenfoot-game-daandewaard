@@ -53,6 +53,10 @@ public class TileEngine {
         this.setMap(map);
     }
 
+    TileEngine() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * The setMap method used to set a map. This method also clears the previous
      * map and generates a new one.
@@ -176,6 +180,10 @@ public class TileEngine {
             return true;
         }
         return false;
+    }
+    public int deathblock(int tilenumber) {
+        int tile = tilenumber;
+        return tilenumber;
     }
     public boolean canJump(int x, int y) {
         Tile tile = getTileAtXY(x, y);
