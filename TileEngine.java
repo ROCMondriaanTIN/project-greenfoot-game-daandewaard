@@ -177,6 +177,13 @@ public class TileEngine {
         }
         return false;
     }
+    public boolean canJump(int x, int y) {
+        Tile tile = getTileAtXY(x, y);
+        if (tile != null && tile.canJump) {
+            return true;
+        }
+        return false;
+    }
 
     /**
      * This methode returns a colom based on a x position.
@@ -217,5 +224,5 @@ public class TileEngine {
     public int getY(int row) {
         return row * TILE_HEIGHT;
     }
-
+    
 }

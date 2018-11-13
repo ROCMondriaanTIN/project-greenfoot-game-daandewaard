@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author R. Springer
  */
 public class Mover extends Actor {
-    public static boolean canJump = true;
+    
     public int screenX;
     public int screenY;
     public double velocityX;

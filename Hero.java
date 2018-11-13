@@ -14,14 +14,26 @@ public class Hero extends Mover {
     private boolean geraakt = false;
     private  int pause = 50;
     private int levens = 3;
-    private boolean canJump = true;
+    public static boolean canJump;
+    public boolean jumpEnabled(boolean canJump) {
+    Hero.canJump = canJump;
+    if (canJump == true){
+    canJump = true;
+    return canJump;
+    }
+    else{
+      canJump = false;
+      return canJump;
+    }}
+   
+    
 
     public void jump(){
-    canJump = false;
+    
     }
     public Hero() {
         super();
-        gravity = 9.8;
+        gravity = 6.8;
         acc = 0.61;
         drag = 0.8;
         setImage("p1.png");
@@ -30,7 +42,11 @@ public class Hero extends Mover {
     @Override
     public void act() {
         
+       
+        
+               
         handleInput();
+        
         
         velocityX *= drag;
         velocityY += acc;
@@ -68,8 +84,10 @@ public class Hero extends Mover {
 
     public void handleInput() {
         if (geraakt == false){
-        if (Greenfoot.isKeyDown("w") && (isTouching(Tile.class) && canJump == true)) {
-            velocityY = -25;
+       
+            if (Greenfoot.isKeyDown("w") && (isTouching(Tile.class)) && (velocityY <= 0)) {
+            velocityY = -20;
+        }
         }
 
         if (Greenfoot.isKeyDown("a")) {
@@ -78,7 +96,7 @@ public class Hero extends Mover {
             velocityX = 2;
         }
     }
-}
+
 
     public int getWidth() {
         return getImage().getWidth();

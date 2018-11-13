@@ -8,8 +8,10 @@ import greenfoot.*;
 public class Tile extends Actor {
 
     public boolean isSolid = false;
+    
     private static int id;
     public int _id;
+    public boolean canJump;
 
     /**
      * Contructor of the tile. Creates a tile based on image, width and height
