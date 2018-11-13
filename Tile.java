@@ -16,6 +16,7 @@ public class Tile extends Actor {
     public boolean canJump;
     public static int tileNum;
     public static boolean water;
+    public static String type = "niet water";
     
 
     /**
@@ -32,8 +33,21 @@ public class Tile extends Actor {
         if (CollisionEngine.DEBUG) {
             getImage().drawString("ÏD: " + id, 10, 10);
         }
+       
+       _id = id;
+        id++;
+    }
+    public Tile(String image, int width, int heigth, String type) {
+        super();
+        setImage(image);
+        getImage().scale(width, heigth);
+        if (CollisionEngine.DEBUG) {
+            getImage().drawString("ÏD: " + id, 10, 10);
+        }
         _id = id;
         id++;
+        this.type = type;
+        
     }
 
     Tile() {

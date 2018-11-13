@@ -37,6 +37,7 @@ public class Hero extends Mover {
             return canJump;
         }
     }
+    
 
     public void jump() {
 
@@ -52,6 +53,18 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        for (Tile tile : getIntersectingObjects(Tile.class))
+        {
+            //Tile tile = (Tile) actor;
+            if (tile.getImage().toString().contains("Water"))
+            {     
+                
+                getWorld().removeObject(this);
+                return;
+            }
+        }
+    
+    
         if(frame > 10)
         {
         frame = 1;
