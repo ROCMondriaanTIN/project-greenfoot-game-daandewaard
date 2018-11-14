@@ -82,7 +82,15 @@ public class Hero extends Mover {
                     setLocation(300, 200);
                     setImage("p1.png");
                     geraakt = false;
-            }
+            
+                    levens--;
+                    System.out.println(levens);
+                }
+
+                if (levens == 0) {
+                    getWorld().removeObject(this);
+
+                }
         }
         for (Tile tile : getIntersectingObjects(Tile.class))
         {
@@ -141,11 +149,12 @@ public class Hero extends Mover {
                     }
                     geraakt = false;
                     levens--;
-                    System.out.print(levens);
+                    System.out.println(levens);
                 }
 
                 if (levens == 0) {
                     getWorld().removeObject(this);
+                    
 
                 }
                 for (Tile tile : getIntersectingObjects(Tile.class)){
@@ -175,7 +184,7 @@ public class Hero extends Mover {
     public void handleInput(){
          {
 
-            if (Greenfoot.isKeyDown("w") && (isTouching(Tile.class)) && (velocityY <= 0)) {
+            if (Greenfoot.isKeyDown("space") && (isTouching(Tile.class)) && (velocityY <= 0)) {
                 velocityY = -20;
             }
         }
