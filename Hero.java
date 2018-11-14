@@ -29,6 +29,28 @@ public class Hero extends Mover {
     private GreenfootImage run9 = new GreenfootImage("p1_walk09.png");
     private GreenfootImage run10 = new GreenfootImage("p1_walk10.png");
     private GreenfootImage run11 = new GreenfootImage("p1_walk11.png");
+    private GreenfootImage p2run1 = new GreenfootImage("p2_walk01.png");
+    private GreenfootImage p2run2 = new GreenfootImage("p2_walk02.png");
+    private GreenfootImage p2run3 = new GreenfootImage("p2_walk03.png");
+    private GreenfootImage p2run4 = new GreenfootImage("p2_walk04.png");
+    private GreenfootImage p2run5 = new GreenfootImage("p2_walk05.png");
+    private GreenfootImage p2run6 = new GreenfootImage("p2_walk06.png");
+    private GreenfootImage p2run7 = new GreenfootImage("p2_walk07.png");
+    private GreenfootImage p2run8 = new GreenfootImage("p2_walk08.png");
+    private GreenfootImage p2run9 = new GreenfootImage("p2_walk09.png");
+    private GreenfootImage p2run10 = new GreenfootImage("p2_walk10.png");
+    private GreenfootImage p2run11 = new GreenfootImage("p2_walk11.png");
+    private GreenfootImage p3run1 = new GreenfootImage("p3_walk01.png");
+    private GreenfootImage p3run2 = new GreenfootImage("p3_walk02.png");
+    private GreenfootImage p3run3 = new GreenfootImage("p3_walk03.png");
+    private GreenfootImage p3run4 = new GreenfootImage("p3_walk04.png");
+    private GreenfootImage p3run5 = new GreenfootImage("p3_walk05.png");
+    private GreenfootImage p3run6 = new GreenfootImage("p3_walk06.png");
+    private GreenfootImage p3run7 = new GreenfootImage("p3_walk07.png");
+    private GreenfootImage p3run8 = new GreenfootImage("p3_walk08.png");
+    private GreenfootImage p3run9 = new GreenfootImage("p3_walk09.png");
+    private GreenfootImage p3run10 = new GreenfootImage("p3_walk10.png");
+    private GreenfootImage p3run11 = new GreenfootImage("p3_walk11.png");
     public int animationCounter = 0;
     private int frame = 1;
     private static int teller = 1;
@@ -56,11 +78,22 @@ public class Hero extends Mover {
         gravity = 6.8;
         acc = 0.41;
         drag = 0.8;
+        if (MyWorld.personage == 1){
         setImage("p1.png");
-    }
+        }
+        else if (MyWorld.personage == 2){
+            setImage("p2_stand.png");
+        }
+        else{
+            
+        setImage("p3_stand.png");
+        
+    }}
+    
 
     @Override
     public void act() {
+        jumpFix();
         
         
         
@@ -180,14 +213,14 @@ public class Hero extends Mover {
         }
     }
     
-
-    public void handleInput(){
-         {
+    public void jumpFix(){         {
 
             if (Greenfoot.isKeyDown("space") && (isTouching(Tile.class)) && (velocityY <= 0)) {
                 velocityY = -20;
             }
-        }
+        }}
+    public void handleInput(){
+
 
         if (Greenfoot.isKeyDown("a")) {
             velocityX = -2;
@@ -212,7 +245,9 @@ public class Hero extends Mover {
             
         
 
+    
     private void animation() {
+        if (MyWorld.personage == 1){
         switch (teller){
                 case 1:
                 setImage(run2);
@@ -278,6 +313,139 @@ public class Hero extends Mover {
                 teller = 1;
     }
     }
+        else if (MyWorld.personage == 2)
+        {
+            switch (teller){
+                case 1:
+                setImage(p2run2);
+                teller ++;
+                break;
+                case 2:
+                setImage(p2run2);
+                teller ++;
+                break;
+                case 3:
+                setImage(p2run2);
+                teller ++;
+                break;
+                case 4:
+                setImage(p2run2);
+                teller ++;
+                break;
+                case 5:
+                setImage(p2run2);
+                teller ++;
+                break;
+                case 6:
+                setImage(p2run5);
+                teller ++;
+                break;
+                case 7:
+                setImage(p2run5);
+                teller ++;
+                break;
+                case 8:
+                setImage(p2run5);
+                teller ++;
+                break;
+                case 9:
+                setImage(p2run5);
+                teller ++;
+                break;
+                case 10:
+                setImage(p2run5);
+                teller ++;
+                break;
+                case 11:
+                setImage(p2run8);
+                teller ++;
+                break;
+                case 12:
+                setImage(p2run8);
+                teller ++;
+                break;
+                case 13:
+                setImage(p2run8);
+                teller ++;
+                break;
+                case 14:
+                setImage(p2run8);
+                teller ++;
+                break;
+                case 15:
+                setImage(p2run8);
+                teller ++;
+                break;
+                default:
+                teller = 1;
+    }
+    }
+        else if (MyWorld.personage == 3)
+        {
+            switch (teller){
+                case 1:
+                setImage(p3run2);
+                teller ++;
+                break;
+                case 2:
+                setImage(p3run2);
+                teller ++;
+                break;
+                case 3:
+                setImage(p3run2);
+                teller ++;
+                break;
+                case 4:
+                setImage(p3run2);
+                teller ++;
+                break;
+                case 5:
+                setImage(p3run2);
+                teller ++;
+                break;
+                case 6:
+                setImage(p3run5);
+                teller ++;
+                break;
+                case 7:
+                setImage(p3run5);
+                teller ++;
+                break;
+                case 8:
+                setImage(p3run5);
+                teller ++;
+                break;
+                case 9:
+                setImage(p3run5);
+                teller ++;
+                break;
+                case 10:
+                setImage(p3run5);
+                teller ++;
+                break;
+                case 11:
+                setImage(p3run8);
+                teller ++;
+                break;
+                case 12:
+                setImage(p3run8);
+                teller ++;
+                break;
+                case 13:
+                setImage(p3run8);
+                teller ++;
+                break;
+                case 14:
+                setImage(p3run8);
+                teller ++;
+                break;
+                case 15:
+                setImage(p3run8);
+                teller ++;
+                break;
+                default:
+                teller = 1;
+            }}}
 
         
     
