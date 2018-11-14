@@ -3,7 +3,7 @@
  *
  * @author R. Springer
  */
-public class TileFactory   {
+public class TileFactory extends Hero   {
 
     /**
      * Creates a Tile object based on the mapIcon number you give
@@ -263,7 +263,7 @@ public class TileFactory   {
                 break;
                 case 50:
                 tile = new Tile("keyYellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-           
+                
             
                 break;
                 case 51:
