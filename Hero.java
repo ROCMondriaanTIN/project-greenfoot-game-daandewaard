@@ -100,6 +100,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         
+        
         jumpFix();
        for (Actor actor : getIntersectingObjects(Tile.class))
         {
@@ -139,9 +140,11 @@ public class Hero extends Mover {
         
         for (Tile tile : getIntersectingObjects(Tile.class))
         {
+            if (getWorld().getObjects(Hero.class).size()!=0){
             //Tile tile = (Tile) actor;
             if (tile.getImage().toString().contains("Water"))
-            {     
+            {
+                
                 Greenfoot.playSound("deathnew.wav");
                 while (pause != 0) {
                         geraakt = true;
@@ -170,6 +173,7 @@ public class Hero extends Mover {
 
                 }
                 continue;
+            }
         }
        
     
@@ -210,7 +214,7 @@ public class Hero extends Mover {
                     setImage("p1.png");
                     geraakt = false;
                 }
-                for (Actor enemy2 : getIntersectingObjects(Enemy.class)) {
+                /* for (Actor enemy2 : getIntersectingObjects(Enemy.class)) {
                     if (enemy != null) {
                         Greenfoot.playSound("deathnew.wav");
 
@@ -234,7 +238,7 @@ public class Hero extends Mover {
                     getWorld().removeObject(this);
                     
 
-                }
+                } 
                 for (Tile tile : getIntersectingObjects(Tile.class)){
                     System.out.println(Tile.tileNum);
                  if (Tile.tileNum == 46) 
@@ -250,10 +254,10 @@ public class Hero extends Mover {
                     setLocation(300, 200);
                     setImage("p1.png");
                      
-                }
+                } 
                  
                 }
-            }
+*/            }
 
         }
     }

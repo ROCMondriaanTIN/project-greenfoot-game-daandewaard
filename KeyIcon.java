@@ -8,7 +8,7 @@
  *
  * @author 302305958
  */
-public class keyIcon extends Mover 
+public class KeyIcon extends Mover 
 {
     
     
