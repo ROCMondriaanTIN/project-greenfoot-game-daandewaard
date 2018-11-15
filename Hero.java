@@ -194,26 +194,21 @@ public class Hero extends Mover {
             
             for (Actor enemy : getIntersectingObjects(Enemy.class)) {
                 if (enemy != null) {
-                    Greenfoot.playSound("deathnew.wav");
+                    if(isTouching(Tile.class)){
+                        Greenfoot.playSound("deathnew.wav");
 
-                    while (pause != 0) {
-                        geraakt = true;
-                        if (MyWorld.personage == 1){
-                        setImage("p1_hurt.png");
-                        }
-                        else if (MyWorld.personage == 2){
-                        setImage("p2_hurt.png");}
-                        else {
-                        setImage("p3_hurt.png");}
-                        pause--;
-                        return;
-                    }
-                    pause = 50;
+                    
+                   
 
                     setLocation(300, 200);
-                    setImage("p1.png");
+                    
                     geraakt = false;
-                }
+                    }
+                    else{
+                        getWorld().removeObject(enemy);
+                    continue;
+                    
+                }}
                 /* for (Actor enemy2 : getIntersectingObjects(Enemy.class)) {
                     if (enemy != null) {
                         Greenfoot.playSound("deathnew.wav");
