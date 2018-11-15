@@ -61,6 +61,7 @@ public class Hero extends Mover {
     private static int teller = 1;
     public static boolean keyCollect = false;
     public static boolean keyNotFound = false;
+    public int aantalMunten;
 
     public boolean jumpEnabled(boolean canJump) {
         Hero.canJump = canJump;
@@ -99,6 +100,10 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        if(Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V"
+        ) && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")){
+        velocityY =- 100;}
+        
         
         
         jumpFix();
@@ -136,6 +141,19 @@ public class Hero extends Mover {
             }
         }
         
+        for (Tile tile : getIntersectingObjects(Tile.class))
+        {
+           
+            
+            if (tile.getImage().toString().contains("coinGold")){
+            getWorld().removeObject(tile);
+            aantalMunten ++;}
+                
+        }
+       
+       
+       
+       
         
         
         for (Tile tile : getIntersectingObjects(Tile.class))
