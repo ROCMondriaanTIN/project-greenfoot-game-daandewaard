@@ -106,7 +106,13 @@ public class Hero extends Mover {
                 Greenfoot.playSound("death.wav");
                 while (pause != 0) {
                         geraakt = true;
+                        if (MyWorld.personage == 1){
                         setImage("p1_hurt.png");
+                        }
+                        else if (MyWorld.personage == 2){
+                        setImage("p2_hurt.png");}
+                        else {
+                        setImage("p3_hurt.png");}
                         pause--;
                         return;
                     }
@@ -155,7 +161,13 @@ public class Hero extends Mover {
 
                     while (pause != 0) {
                         geraakt = true;
+                        if (MyWorld.personage == 1){
                         setImage("p1_hurt.png");
+                        }
+                        else if (MyWorld.personage == 2){
+                        setImage("p2_hurt.png");}
+                        else {
+                        setImage("p3_hurt.png");}
                         pause--;
                         return;
                     }
@@ -215,13 +227,17 @@ public class Hero extends Mover {
     
     public void jumpFix(){         {
 
-            if (Greenfoot.isKeyDown("space") && (isTouching(Tile.class)) && (velocityY <= 0)) {
+            if (Greenfoot.isKeyDown("space") && (isTouching(Tile.class)&& (velocityY <= 0))) {
                 velocityY = -20;
             }
         }}
     public void handleInput(){
+if(Greenfoot.isKeyDown("p")){
+velocityY = -20;
+animationCounter = animationCounter +1;
 
-
+        if(animationCounter % 5 == 0){velocityY = -100;}
+}
         if (Greenfoot.isKeyDown("a")) {
             velocityX = -2;
         } else if (Greenfoot.isKeyDown("d")) {
@@ -238,9 +254,7 @@ public class Hero extends Mover {
             }
              
             
-        {
-    
-        }
+        
             
             
         
@@ -313,8 +327,7 @@ public class Hero extends Mover {
                 teller = 1;
     }
     }
-        else if (MyWorld.personage == 2)
-        {
+        else if (MyWorld.personage == 2){
             switch (teller){
                 case 1:
                 setImage(p2run2);
@@ -377,10 +390,8 @@ public class Hero extends Mover {
                 teller ++;
                 break;
                 default:
-                teller = 1;
-    }
-    }
-        else if (MyWorld.personage == 3)
+                teller = 1;}
+    }else
         {
             switch (teller){
                 case 1:
