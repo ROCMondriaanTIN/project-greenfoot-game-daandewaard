@@ -77,6 +77,7 @@ public class MyWorld extends World {
         //addObject(hero, 5000, 200);
         addObject(new Enemy(), 1170, 525);
         addObject(new Enemy2(), 1187, 2107);
+        addObject(new keyIcon(), 100, 100);
         
   
         
