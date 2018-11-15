@@ -61,7 +61,7 @@ public class Hero extends Mover {
     private static int teller = 1;
     public static boolean keyCollect = false;
     public static boolean keyNotFound = false;
-    public int aantalMunten;
+    public static int aantalMunten;
 
     public boolean jumpEnabled(boolean canJump) {
         Hero.canJump = canJump;
@@ -147,9 +147,21 @@ public class Hero extends Mover {
             
             if (tile.getImage().toString().contains("coinGold")){
             getWorld().removeObject(tile);
+            aantalMunten +=2;}
+                
+        }
+        for (Tile tile : getIntersectingObjects(Tile.class))
+        {
+           
+            
+            if (tile.getImage().toString().contains("coinSilver")){
+            getWorld().removeObject(tile);
             aantalMunten ++;}
                 
         }
+        if (aantalMunten == 40){
+        levens ++;
+        aantalMunten = 0;}
        
        
        
