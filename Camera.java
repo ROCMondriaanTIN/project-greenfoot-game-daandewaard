@@ -20,6 +20,7 @@ public class Camera extends Actor {
     private Mover followActor;
     private boolean prevSwitchCameraDown;
     private boolean currentSwitchCameraDown;
+    public static boolean canFollow = true;
 
     /**
      * The constructor of the Camera class Camera class moves the Tiles and
@@ -59,10 +60,11 @@ public class Camera extends Actor {
      * be followed.
      */
     public void follow(Mover mover) {
+        if( canFollow == true){
         this.follow = true;
         mover.setCamera(this);
         this.followActor = mover;
-    }
+    }}
 
     @Override
     public void act() {

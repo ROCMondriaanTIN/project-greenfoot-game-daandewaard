@@ -1,5 +1,8 @@
 
 import greenfoot.*;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -54,6 +57,7 @@ public class Hero extends Mover {
     public int animationCounter = 0;
     private int frame = 1;
     private static int teller = 1;
+    public static boolean keyCollect = false;
 
     public boolean jumpEnabled(boolean canJump) {
         Hero.canJump = canJump;
@@ -65,12 +69,11 @@ public class Hero extends Mover {
             return canJump;
         }
     }
-    public void removeTile(){
-    removeTouching(Tile.class);}
+    
     
 
     public void jump() {
-
+        
     }
 
     public Hero() {
@@ -93,8 +96,40 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        System.out.println(keyCollect);
         jumpFix();
-        
+       for (Actor actor : getIntersectingObjects(Tile.class))
+        {
+            Tile tile = (Tile) actor;
+            if (tile.getImage().toString().contains("keyYellow"))
+            {     
+                getWorld().removeObject(tile);
+                keyCollect = true;
+                System.out.println(keyCollect);
+                return;
+                
+            }
+        }
+       for (Actor actor : getIntersectingObjects(Tile.class))
+        {
+            Tile tile = (Tile) actor;
+            if (tile.getImage().toString().contains("lock_yellow"))
+            {     
+                if (keyCollect == true){
+                JOptionPane.showMessageDialog ( 
+                null, "Level voltooid" );
+                getWorld().removeObject(this);
+                    }
+                else if (keyCollect == false){
+                {
+                    JOptionPane.showMessageDialog ( 
+                 null, "Key nog niet gevonden" );
+                }
+                }
+                
+                
+            }
+        }
         
         
         
@@ -103,7 +138,7 @@ public class Hero extends Mover {
             //Tile tile = (Tile) actor;
             if (tile.getImage().toString().contains("Water"))
             {     
-                Greenfoot.playSound("death.wav");
+                Greenfoot.playSound("deathnew.wav");
                 while (pause != 0) {
                         geraakt = true;
                         if (MyWorld.personage == 1){
@@ -131,14 +166,7 @@ public class Hero extends Mover {
 
                 }
         }
-        for (Tile tile : getIntersectingObjects(Tile.class))
-        {
-            if (tile.getImage().toString().contains("keyYellow"))
-            {
-                   Hero remover = new Hero();
-                   remover.removeTile();
-            }
-        }
+       
     
     
         
@@ -157,7 +185,7 @@ public class Hero extends Mover {
             
             for (Actor enemy : getIntersectingObjects(Enemy.class)) {
                 if (enemy != null) {
-                    Greenfoot.playSound("death.wav");
+                    Greenfoot.playSound("deathnew.wav");
 
                     while (pause != 0) {
                         geraakt = true;
@@ -179,7 +207,7 @@ public class Hero extends Mover {
                 }
                 for (Actor enemy2 : getIntersectingObjects(Enemy.class)) {
                     if (enemy != null) {
-                        Greenfoot.playSound("death.wav");
+                        Greenfoot.playSound("deathnew.wav");
 
                         while (pause != 0) {
                             geraakt = true;
@@ -234,10 +262,9 @@ public class Hero extends Mover {
     public void handleInput(){
 if(Greenfoot.isKeyDown("p")){
 velocityY = -20;
-animationCounter = animationCounter +1;
+animationCounter = animationCounter +1;}
 
-        if(animationCounter % 5 == 0){velocityY = -100;}
-}
+        
         if (Greenfoot.isKeyDown("a")) {
             velocityX = -2;
         } else if (Greenfoot.isKeyDown("d")) {
