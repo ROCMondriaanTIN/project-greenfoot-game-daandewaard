@@ -231,6 +231,7 @@ public class Hero extends Mover {
                    
 
                     setLocation(300, 200);
+                    levens --;
                     
                     geraakt = false;
                     }
