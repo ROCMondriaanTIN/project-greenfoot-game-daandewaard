@@ -1,5 +1,7 @@
 
 import greenfoot.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -58,6 +60,7 @@ public class Hero extends Mover {
     private int frame = 1;
     private static int teller = 1;
     public static boolean keyCollect = false;
+    public static boolean keyNotFound = false;
 
     public boolean jumpEnabled(boolean canJump) {
         Hero.canJump = canJump;
@@ -96,7 +99,7 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
-        System.out.println(keyCollect);
+        
         jumpFix();
        for (Actor actor : getIntersectingObjects(Tile.class))
         {
@@ -105,7 +108,7 @@ public class Hero extends Mover {
             {     
                 getWorld().removeObject(tile);
                 keyCollect = true;
-                System.out.println(keyCollect);
+                
                 return;
                 
             }
@@ -121,13 +124,14 @@ public class Hero extends Mover {
                 getWorld().removeObject(this);
                     }
                 else if (keyCollect == false){
-                {
-                    JOptionPane.showMessageDialog ( 
-                 null, "Key nog niet gevonden" );
-                }
+                
+                    
+                    
+                        
                 }
                 
                 
+               
             }
         }
         
