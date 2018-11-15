@@ -169,6 +169,7 @@ public class Hero extends Mover {
                     getWorld().removeObject(this);
 
                 }
+                continue;
         }
        
     
@@ -274,7 +275,7 @@ animationCounter = animationCounter +1;}
         } else if (Greenfoot.isKeyDown("d")) {
             animationCounter = animationCounter +1;
 
-        if(animationCounter % 5 == 0)
+        if(animationCounter % 6 == 0)
         {
         animation();
         }
@@ -295,7 +296,7 @@ animationCounter = animationCounter +1;}
         if (MyWorld.personage == 1){
         switch (teller){
                 case 1:
-                setImage(run2);
+                setImage(run1);
                 teller ++;
                 break;
                 case 2:
@@ -303,57 +304,40 @@ animationCounter = animationCounter +1;}
                 teller ++;
                 break;
                 case 3:
-                setImage(run2);
+                setImage(run3);
                 teller ++;
                 break;
                 case 4:
-                setImage(run2);
+                setImage(run4);
                 teller ++;
                 break;
                 case 5:
-                setImage(run2);
+                setImage(run5);
                 teller ++;
                 break;
                 case 6:
-                setImage(run5);
+                setImage(run6);
                 teller ++;
                 break;
                 case 7:
-                setImage(run5);
+                setImage(run7);
                 teller ++;
                 break;
                 case 8:
-                setImage(run5);
+                setImage(run8);
                 teller ++;
                 break;
                 case 9:
-                setImage(run5);
+                setImage(run9);
                 teller ++;
                 break;
                 case 10:
-                setImage(run5);
+                setImage(run10);
                 teller ++;
                 break;
-                case 11:
-                setImage(run8);
-                teller ++;
-                break;
-                case 12:
-                setImage(run8);
-                teller ++;
-                break;
-                case 13:
-                setImage(run8);
-                teller ++;
-                break;
-                case 14:
-                setImage(run8);
-                teller ++;
-                break;
-                case 15:
-                setImage(run8);
-                teller ++;
-                break;
+                
+                
+                
                 default:
                 teller = 1;
     }
@@ -361,7 +345,7 @@ animationCounter = animationCounter +1;}
         else if (MyWorld.personage == 2){
             switch (teller){
                 case 1:
-                setImage(p2run2);
+                setImage(p2run1);
                 teller ++;
                 break;
                 case 2:
@@ -369,64 +353,45 @@ animationCounter = animationCounter +1;}
                 teller ++;
                 break;
                 case 3:
-                setImage(p2run2);
+                setImage(p2run3);
                 teller ++;
                 break;
                 case 4:
-                setImage(p2run2);
+                setImage(p2run4);
                 teller ++;
                 break;
                 case 5:
-                setImage(p2run2);
+                setImage(p2run5);
                 teller ++;
                 break;
                 case 6:
-                setImage(p2run5);
+                setImage(p2run6);
                 teller ++;
                 break;
                 case 7:
-                setImage(p2run5);
+                setImage(p2run7);
                 teller ++;
                 break;
                 case 8:
-                setImage(p2run5);
+                setImage(p2run8);
                 teller ++;
                 break;
                 case 9:
-                setImage(p2run5);
+                setImage(p2run9);
                 teller ++;
                 break;
                 case 10:
-                setImage(p2run5);
+                setImage(p2run10);
                 teller ++;
                 break;
-                case 11:
-                setImage(p2run8);
-                teller ++;
-                break;
-                case 12:
-                setImage(p2run8);
-                teller ++;
-                break;
-                case 13:
-                setImage(p2run8);
-                teller ++;
-                break;
-                case 14:
-                setImage(p2run8);
-                teller ++;
-                break;
-                case 15:
-                setImage(p2run8);
-                teller ++;
-                break;
+                
                 default:
                 teller = 1;}
     }else
         {
             switch (teller){
                 case 1:
-                setImage(p3run2);
+                setImage(p3run1);
                 teller ++;
                 break;
                 case 2:
@@ -434,57 +399,38 @@ animationCounter = animationCounter +1;}
                 teller ++;
                 break;
                 case 3:
-                setImage(p3run2);
+                setImage(p3run3);
                 teller ++;
                 break;
                 case 4:
-                setImage(p3run2);
+                setImage(p3run4);
                 teller ++;
                 break;
                 case 5:
-                setImage(p3run2);
+                setImage(p3run5);
                 teller ++;
                 break;
                 case 6:
-                setImage(p3run5);
+                setImage(p3run6);
                 teller ++;
                 break;
                 case 7:
-                setImage(p3run5);
+                setImage(p3run7);
                 teller ++;
                 break;
                 case 8:
-                setImage(p3run5);
+                setImage(p3run8);
                 teller ++;
                 break;
                 case 9:
-                setImage(p3run5);
+                setImage(p3run9);
                 teller ++;
                 break;
                 case 10:
-                setImage(p3run5);
+                setImage(p3run10);
                 teller ++;
                 break;
-                case 11:
-                setImage(p3run8);
-                teller ++;
-                break;
-                case 12:
-                setImage(p3run8);
-                teller ++;
-                break;
-                case 13:
-                setImage(p3run8);
-                teller ++;
-                break;
-                case 14:
-                setImage(p3run8);
-                teller ++;
-                break;
-                case 15:
-                setImage(p3run8);
-                teller ++;
-                break;
+                
                 default:
                 teller = 1;
             }}}
