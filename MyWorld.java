@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @author R. Springer
  */
 public class MyWorld extends World {
-    String personagestring;
+    static String personagestring;
     static int personage;
 
     private CollisionEngine ce;
@@ -73,8 +73,8 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        //addObject(hero, 300, 200);
-        addObject(hero, 7000, 200);    
+        addObject(hero, 300, 200);
+        //addObject(hero, 7000, 200);    
         //addObject(hero, 5000, 200);
         addObject(new Enemy(), 6823, 1945);
         addObject(new Enemy(), 3088, 2015);
@@ -82,6 +82,7 @@ public class MyWorld extends World {
         addObject(new KeyIcon(), 100, 100);
         addObject(new Punten(), 100, 200);
         addObject(new PuntenTientallen(), 75, 200);
+        addObject(new LevensIcon(), 100, 50);
         
        
   

@@ -21,7 +21,7 @@ public class Hero extends Mover {
     private final double drag;
     private boolean geraakt = false;
     private int pause = 50;
-    private int levens = 3;
+    public static int levens = 3;
     public static boolean canJump;
     private GreenfootImage run1 = new GreenfootImage("p1_walk01.png");
     private GreenfootImage run2 = new GreenfootImage("p1_walk02.png");
@@ -100,6 +100,7 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        
         if(Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V"
         ) && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")){
         velocityY =- 100;}
@@ -229,9 +230,9 @@ public class Hero extends Mover {
 
                     
                    
-
-                    setLocation(300, 200);
                     levens --;
+                    setLocation(300, 200);
+                    
                     
                     geraakt = false;
                     }
@@ -300,9 +301,23 @@ velocityY = -20;
 animationCounter = animationCounter +1;}
 
         
-        if (Greenfoot.isKeyDown("a")) {
+        if (Greenfoot.isKeyDown("a")) 
+        {
+            
+
+      getImage().mirrorHorizontally();
+
+        
             velocityX = -2;
+            richting = "links";
+            animationCounter = animationCounter +1;
+
+        if(animationCounter % 6 == 0)
+        {
+        animation();
+        }
         } else if (Greenfoot.isKeyDown("d")) {
+            richting = "rechts";
             animationCounter = animationCounter +1;
 
         if(animationCounter % 6 == 0)
@@ -480,6 +495,7 @@ animationCounter = animationCounter +1;}
         return getImage().getHeight();
 
     }
+    
     
 
 }
