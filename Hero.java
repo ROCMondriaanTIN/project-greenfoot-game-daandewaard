@@ -62,6 +62,7 @@ public class Hero extends Mover {
     public static boolean keyCollect = false;
     public static boolean keyNotFound = false;
     public static int aantalMunten;
+    public static boolean isMirrored;
 
     public boolean jumpEnabled(boolean canJump) {
         Hero.canJump = canJump;
@@ -305,7 +306,7 @@ animationCounter = animationCounter +1;}
         {
             
 
-      getImage().mirrorHorizontally();
+      
 
         
             velocityX = -2;
@@ -315,9 +316,14 @@ animationCounter = animationCounter +1;}
         if(animationCounter % 6 == 0)
         {
         animation();
+        if (isMirrored == true){
+        getImage().mirrorHorizontally();
+        }
+        
         }
         } else if (Greenfoot.isKeyDown("d")) {
             richting = "rechts";
+            isMirrored = false;
             animationCounter = animationCounter +1;
 
         if(animationCounter % 6 == 0)
@@ -325,7 +331,7 @@ animationCounter = animationCounter +1;}
         animation();
         }
             velocityX = 2;
-            
+            isMirrored = true;
         }
             
             }
