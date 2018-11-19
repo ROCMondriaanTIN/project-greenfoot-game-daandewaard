@@ -13,10 +13,10 @@ import javax.swing.JPanel;
 public class Hero extends Mover {
 
     private final double gravity;
-   private int walking = 1;
+    private int walking = 1;
     private int status = 0;
-    private String richting = "right";
-
+    private String richting = "rechts";
+    
     private final double acc;
     private final double drag;
     private boolean geraakt = false;
@@ -56,6 +56,7 @@ public class Hero extends Mover {
     private GreenfootImage p3run9 = new GreenfootImage("p3_walk09.png");
     private GreenfootImage p3run10 = new GreenfootImage("p3_walk10.png");
     private GreenfootImage p3run11 = new GreenfootImage("p3_walk11.png");
+    
     public int animationCounter = 0;
     private int frame = 1;
     private static int teller = 1;
@@ -74,119 +75,148 @@ public class Hero extends Mover {
             return canJump;
         }
     }
-    
-    
 
     public void jump() {
-        
+
     }
+    private static GreenfootImage[] mirror = new GreenfootImage[33];
+ 
+
 
     public Hero() {
         super();
         gravity = 6.8;
         acc = 0.41;
         drag = 0.8;
-        if (MyWorld.personage == 1){
-        setImage("p1.png");
-        }
-        else if (MyWorld.personage == 2){
+        if (MyWorld.personage == 1) {
+            setImage("p1.png");
+        } else if (MyWorld.personage == 2) {
             setImage("p2_stand.png");
+        } else {
+
+            setImage("p3_stand.png");
+
         }
-        else{
-            
-        setImage("p3_stand.png");
         
-    }}
-    
+        
+        mirror[0] = new GreenfootImage("p1_walk01.png");
+        mirror[1] = new GreenfootImage("p1_walk02.png");
+        mirror[2] = new GreenfootImage("p1_walk03.png");
+        mirror[3] = new GreenfootImage("p1_walk04.png");
+        mirror[4] = new GreenfootImage("p1_walk05.png");
+        mirror[5] = new GreenfootImage("p1_walk06.png");
+        mirror[6] = new GreenfootImage("p1_walk07.png");
+        mirror[7] = new GreenfootImage("p1_walk08.png");
+        mirror[8] = new GreenfootImage("p1_walk09.png");
+        mirror[9] = new GreenfootImage("p1_walk10.png");
+        mirror[10] = new GreenfootImage("p1_walk11.png");
+        mirror[11] = new GreenfootImage("p2_walk01.png");
+        mirror[12] = new GreenfootImage("p2_walk02.png");
+        mirror[13] = new GreenfootImage("p2_walk03.png");
+        mirror[14] = new GreenfootImage("p2_walk04.png");
+        mirror[15] = new GreenfootImage("p2_walk05.png");
+        mirror[16] = new GreenfootImage("p2_walk06.png");
+        mirror[17] = new GreenfootImage("p2_walk07.png");
+        mirror[18] = new GreenfootImage("p2_walk08.png");
+        mirror[19] = new GreenfootImage("p2_walk09.png");
+        mirror[20] = new GreenfootImage("p2_walk10.png");
+        mirror[21] = new GreenfootImage("p2_walk11.png");
+        mirror[22] = new GreenfootImage("p3_walk01.png");
+        mirror[23] = new GreenfootImage("p3_walk02.png");
+        mirror[24] = new GreenfootImage("p3_walk03.png");
+        mirror[25] = new GreenfootImage("p3_walk04.png");
+        mirror[26] = new GreenfootImage("p3_walk05.png");
+        mirror[27] = new GreenfootImage("p3_walk06.png");
+        mirror[28] = new GreenfootImage("p3_walk07.png");
+        mirror[29] = new GreenfootImage("p3_walk08.png");
+        mirror[30] = new GreenfootImage("p3_walk09.png");
+        mirror[31] = new GreenfootImage("p3_walk10.png");
+        mirror[32] = new GreenfootImage("p3_walk11.png");
+          
+         for(int i = 2; i < 32; i++)
+    {
+        mirror[i].mirrorHorizontally();
+    }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
 
     @Override
     public void act() {
         
-        if(Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V"
-        ) && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")){
-        velocityY =- 100;}
-        
-        
-        
+        if (Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V"
+        ) && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")) {
+            velocityY = - 100;
+        }
+
         jumpFix();
-       for (Actor actor : getIntersectingObjects(Tile.class))
-        {
+        for (Actor actor : getIntersectingObjects(Tile.class)) {
             Tile tile = (Tile) actor;
-            if (tile.getImage().toString().contains("keyYellow"))
-            {     
+            if (tile.getImage().toString().contains("keyYellow")) {
                 getWorld().removeObject(tile);
                 keyCollect = true;
-                
+
                 return;
-                
+
             }
         }
-       for (Actor actor : getIntersectingObjects(Tile.class))
-        {
+        for (Actor actor : getIntersectingObjects(Tile.class)) {
             Tile tile = (Tile) actor;
-            if (tile.getImage().toString().contains("lock_yellow"))
-            {     
-                if (keyCollect == true){
-                JOptionPane.showMessageDialog ( 
-                null, "Level voltooid" );
-                getWorld().removeObject(this);
-                    }
-                else if (keyCollect == false){
-                
-                    
-                    
-                        
+            if (tile.getImage().toString().contains("lock_yellow")) {
+                if (keyCollect == true) {
+                    JOptionPane.showMessageDialog(
+                            null, "Level voltooid");
+                    getWorld().removeObject(this);
+                } else if (keyCollect == false) {
+
                 }
-                
-                
-               
+
             }
         }
-        
-        for (Tile tile : getIntersectingObjects(Tile.class))
-        {
-           
-            
-            if (tile.getImage().toString().contains("coinGold")){
-            getWorld().removeObject(tile);
-            aantalMunten +=2;}
-                
+
+        for (Tile tile : getIntersectingObjects(Tile.class)) {
+
+            if (tile.getImage().toString().contains("coinGold")) {
+                getWorld().removeObject(tile);
+                aantalMunten += 2;
+            }
+
         }
-        for (Tile tile : getIntersectingObjects(Tile.class))
-        {
-           
-            
-            if (tile.getImage().toString().contains("coinSilver")){
-            getWorld().removeObject(tile);
-            aantalMunten ++;}
-                
+        for (Tile tile : getIntersectingObjects(Tile.class)) {
+
+            if (tile.getImage().toString().contains("coinSilver")) {
+                getWorld().removeObject(tile);
+                aantalMunten++;
+            }
+
         }
-        if (aantalMunten == 40){
-        levens ++;
-        aantalMunten = 0;}
-       
-       
-       
-       
-        
-        
-        for (Tile tile : getIntersectingObjects(Tile.class))
-        {
-            if (getWorld().getObjects(Hero.class).size()!=0){
-            //Tile tile = (Tile) actor;
-            if (tile.getImage().toString().contains("Water"))
-            {
-                
-                Greenfoot.playSound("deathnew.wav");
-                while (pause != 0) {
+        if (aantalMunten == 40) {
+            levens++;
+            aantalMunten = 0;
+        }
+
+        for (Tile tile : getIntersectingObjects(Tile.class)) {
+            if (getWorld().getObjects(Hero.class).size() != 0) {
+                //Tile tile = (Tile) actor;
+                if (tile.getImage().toString().contains("Water")) {
+
+                    Greenfoot.playSound("deathnew.wav");
+                    while (pause != 0) {
                         geraakt = true;
-                        if (MyWorld.personage == 1){
-                        setImage("p1_hurt.png");
+                        if (MyWorld.personage == 1) {
+                            setImage("p1_hurt.png");
+                        } else if (MyWorld.personage == 2) {
+                            setImage("p2_hurt.png");
+                        } else {
+                            setImage("p3_hurt.png");
                         }
-                        else if (MyWorld.personage == 2){
-                        setImage("p2_hurt.png");}
-                        else {
-                        setImage("p3_hurt.png");}
                         pause--;
                         return;
                     }
@@ -195,7 +225,7 @@ public class Hero extends Mover {
                     setLocation(300, 200);
                     setImage("p1.png");
                     geraakt = false;
-            
+
                     levens--;
                     System.out.println(levens);
                 }
@@ -207,11 +237,8 @@ public class Hero extends Mover {
                 continue;
             }
         }
-       
-    
-    
-        
-         {
+
+        {
 
             handleInput();
 
@@ -221,27 +248,22 @@ public class Hero extends Mover {
                 velocityY = gravity;
             }
             applyVelocity();
-            
 
-            
             for (Actor enemy : getIntersectingObjects(Enemy.class)) {
                 if (enemy != null) {
-                    if(isTouching(Tile.class)){
+                    if (isTouching(Tile.class)) {
                         Greenfoot.playSound("deathnew.wav");
 
-                    
-                   
-                    levens --;
-                    setLocation(300, 200);
-                    
-                    
-                    geraakt = false;
-                    }
-                    else{
+                        levens--;
+                        setLocation(300, 200);
+
+                        geraakt = false;
+                    } else {
                         getWorld().removeObject(enemy);
-                    continue;
-                    
-                }}
+                        continue;
+
+                    }
+                }
                 /* for (Actor enemy2 : getIntersectingObjects(Enemy.class)) {
                     if (enemy != null) {
                         Greenfoot.playSound("deathnew.wav");
@@ -285,213 +307,350 @@ public class Hero extends Mover {
                 } 
                  
                 }
-*/            }
+                 */            }
 
         }
     }
-    
-    public void jumpFix(){         {
 
-            if (Greenfoot.isKeyDown("space") && (isTouching(Tile.class)&& (velocityY <= 0))) {
+    public void jumpFix() {
+        {
+
+            if (Greenfoot.isKeyDown("space") && (isTouching(Tile.class) && (velocityY <= 0))) {
                 velocityY = -20;
             }
-        }}
-    public void handleInput(){
-if(Greenfoot.isKeyDown("p")){
-velocityY = -20;
-animationCounter = animationCounter +1;}
+        }
+    }
 
-        
-        if (Greenfoot.isKeyDown("a")) 
-        {
-            
+    public void handleInput() {
+        if (Greenfoot.isKeyDown("p")) {
+            velocityY = -20;
+            animationCounter = animationCounter + 1;
+        }
 
-      
+        if (Greenfoot.isKeyDown("a")) {
 
-        
             velocityX = -2;
-            richting = "links";
-            animationCounter = animationCounter +1;
-
-        if(animationCounter % 6 == 0)
-        {
-        animation();
-        if (isMirrored == true){
-        getImage().mirrorHorizontally();
-        }
-        
-        }
-        } else if (Greenfoot.isKeyDown("d")) {
-            richting = "rechts";
-            isMirrored = false;
-            animationCounter = animationCounter +1;
-
-        if(animationCounter % 6 == 0)
-        {
-        animation();
-        }
-            velocityX = 2;
-            isMirrored = true;
-        }
             
+            animationCounter = animationCounter + 1;
+            if (animationCounter % 6 == 0) {
+                animationLeft();
             }
-             
-            
-        
-            
-            
-        
 
-    
-    private void animation() {
-        if (MyWorld.personage == 1){
-        switch (teller){
-                case 1:
-                setImage(run1);
-                teller ++;
-                break;
-                case 2:
-                setImage(run2);
-                teller ++;
-                break;
-                case 3:
-                setImage(run3);
-                teller ++;
-                break;
-                case 4:
-                setImage(run4);
-                teller ++;
-                break;
-                case 5:
-                setImage(run5);
-                teller ++;
-                break;
-                case 6:
-                setImage(run6);
-                teller ++;
-                break;
-                case 7:
-                setImage(run7);
-                teller ++;
-                break;
-                case 8:
-                setImage(run8);
-                teller ++;
-                break;
-                case 9:
-                setImage(run9);
-                teller ++;
-                break;
-                case 10:
-                setImage(run10);
-                teller ++;
-                break;
-                
-                
-                
-                default:
-                teller = 1;
+            
+        } else if (Greenfoot.isKeyDown("d")) {
+
+           
+            animationCounter = animationCounter + 1;
+
+            if (animationCounter % 6 == 0) {
+                animationRight();
+            }
+            velocityX = 2;
+            
+        }
+
     }
+
+    private void animationRight() {
+       
+        if (MyWorld.personage == 1) {
+            switch (teller) {
+                case 1:
+                    setImage(run1);
+                    teller++;
+                    break;
+                case 2:
+                    setImage(run2);
+                    teller++;
+                    break;
+                case 3:
+                    setImage(run3);
+                    teller++;
+                    break;
+                case 4:
+                    setImage(run4);
+                    teller++;
+                    break;
+                case 5:
+                    setImage(run5);
+                    teller++;
+                    break;
+                case 6:
+                    setImage(run6);
+                    teller++;
+                    break;
+                case 7:
+                    setImage(run7);
+                    teller++;
+                    break;
+                case 8:
+                    setImage(run8);
+                    teller++;
+                    break;
+                case 9:
+                    setImage(run9);
+                    teller++;
+                    break;
+                case 10:
+                    setImage(run10);
+                    teller++;
+                    break;
+
+                default:
+                    teller = 1;
+            }
+            
+        } else if (MyWorld.personage == 2) {
+            switch (teller) {
+                case 1:
+                    setImage(p2run1);
+                    teller++;
+                    break;
+                case 2:
+                    setImage(p2run2);
+                    teller++;
+                    break;
+                case 3:
+                    setImage(p2run3);
+                    teller++;
+                    break;
+                case 4:
+                    setImage(p2run4);
+                    teller++;
+                    break;
+                case 5:
+                    setImage(p2run5);
+                    teller++;
+                    break;
+                case 6:
+                    setImage(p2run6);
+                    teller++;
+                    break;
+                case 7:
+                    setImage(p2run7);
+                    teller++;
+                    break;
+                case 8:
+                    setImage(p2run8);
+                    teller++;
+                    break;
+                case 9:
+                    setImage(p2run9);
+                    teller++;
+                    break;
+                case 10:
+                    setImage(p2run10);
+                    teller++;
+                    break;
+
+                default:
+                    teller = 1;
+            }
+        } else {
+            switch (teller) {
+                case 1:
+                    setImage(p3run1);
+                    teller++;
+                    break;
+                case 2:
+                    setImage(p3run2);
+                    teller++;
+                    break;
+                case 3:
+                    setImage(p3run3);
+                    teller++;
+                    break;
+                case 4:
+                    setImage(p3run4);
+                    teller++;
+                    break;
+                case 5:
+                    setImage(p3run5);
+                    teller++;
+                    break;
+                case 6:
+                    setImage(p3run6);
+                    teller++;
+                    break;
+                case 7:
+                    setImage(p3run7);
+                    teller++;
+                    break;
+                case 8:
+                    setImage(p3run8);
+                    teller++;
+                    break;
+                case 9:
+                    setImage(p3run9);
+                    teller++;
+                    break;
+                case 10:
+                    setImage(p3run10);
+                    teller++;
+                    break;
+
+                default:
+                    teller = 1;
+            }
+        }
+         
     }
-        else if (MyWorld.personage == 2){
-            switch (teller){
+     private void animationLeft() {
+       
+        if (MyWorld.personage == 1) {
+            switch (teller) {
                 case 1:
-                setImage(p2run1);
-                teller ++;
-                break;
+                    setImage(mirror[0]);
+                    teller++;
+                    break;
                 case 2:
-                setImage(p2run2);
-                teller ++;
-                break;
+                    setImage(mirror[1]);
+                    teller++;
+                    break;
                 case 3:
-                setImage(p2run3);
-                teller ++;
-                break;
+                    setImage(mirror[2]);
+                    teller++;
+                    break;
                 case 4:
-                setImage(p2run4);
-                teller ++;
-                break;
+                    setImage(mirror[3]);
+                    teller++;
+                    break;
                 case 5:
-                setImage(p2run5);
-                teller ++;
-                break;
+                    setImage(mirror[4]);
+                    teller++;
+                    break;
                 case 6:
-                setImage(p2run6);
-                teller ++;
-                break;
+                    setImage(mirror[5]);
+                    teller++;
+                    break;
                 case 7:
-                setImage(p2run7);
-                teller ++;
-                break;
+                    setImage(mirror[6]);
+                    teller++;
+                    break;
                 case 8:
-                setImage(p2run8);
-                teller ++;
-                break;
+                    setImage(mirror[7]);
+                    teller++;
+                    break;
                 case 9:
-                setImage(p2run9);
-                teller ++;
-                break;
+                    setImage(mirror[8]);
+                    teller++;
+                    break;
                 case 10:
-                setImage(p2run10);
-                teller ++;
-                break;
-                
+                    setImage(mirror[9]);
+                    teller++;
+                    break;
+                    case 11:
+                    setImage(mirror[10]);
+                    teller++;
+                    break;
+
                 default:
-                teller = 1;}
-    }else
-        {
-            switch (teller){
+                    teller = 1;
+            }
+            
+        } else if (MyWorld.personage == 2) {
+            switch (teller) {
                 case 1:
-                setImage(p3run1);
-                teller ++;
-                break;
+                    setImage(mirror[11]);
+                    teller++;
+                    break;
                 case 2:
-                setImage(p3run2);
-                teller ++;
-                break;
+                    setImage(mirror[12]);
+                    teller++;
+                    break;
                 case 3:
-                setImage(p3run3);
-                teller ++;
-                break;
+                    setImage(mirror[13]);
+                    teller++;
+                    break;
                 case 4:
-                setImage(p3run4);
-                teller ++;
-                break;
+                    setImage(mirror[14]);
+                    teller++;
+                    break;
                 case 5:
-                setImage(p3run5);
-                teller ++;
-                break;
+                    setImage(mirror[15]);
+                    teller++;
+                    break;
                 case 6:
-                setImage(p3run6);
-                teller ++;
-                break;
+                    setImage(mirror[16]);
+                    teller++;
+                    break;
                 case 7:
-                setImage(p3run7);
-                teller ++;
-                break;
+                    setImage(mirror[17]);
+                    teller++;
+                    break;
                 case 8:
-                setImage(p3run8);
-                teller ++;
-                break;
+                    setImage(mirror[18]);
+                    teller++;
+                    break;
                 case 9:
-                setImage(p3run9);
-                teller ++;
-                break;
+                    setImage(mirror[19]);
+                    teller++;
+                    break;
                 case 10:
-                setImage(p3run10);
-                teller ++;
-                break;
-                
+                    setImage(mirror[20]);
+                    teller++;
+                    break;
+                    case 11:
+                    setImage(mirror[21]);
+                    teller++;
+                    break;
+
                 default:
-                teller = 1;
-            }}}
+                    teller = 1;
+            }
+        } else {
+            switch (teller) {
+                case 1:
+                    setImage(mirror[22]);
+                    teller++;
+                    break;
+                case 2:
+                    setImage(mirror[23]);
+                    teller++;
+                    break;
+                case 3:
+                    setImage(mirror[24]);
+                    teller++;
+                    break;
+                case 4:
+                    setImage(mirror[25]);
+                    teller++;
+                    break;
+                case 5:
+                    setImage(mirror[26]);
+                    teller++;
+                    break;
+                case 6:
+                    setImage(mirror[27]);
+                    teller++;
+                    break;
+                case 7:
+                    setImage(mirror[28]);
+                    teller++;
+                    break;
+                case 8:
+                    setImage(mirror[29]);
+                    teller++;
+                    break;
+                case 9:
+                    setImage(mirror[30]);
+                    teller++;
+                    break;
+                case 10:
+                    setImage(mirror[31]);
+                    teller++;
+                    break;
+                    case 11:
+                    setImage(mirror[32]);
+                    teller++;
+                    break;
 
-        
-    
-        
-
-        
-
+                default:
+                    teller = 1;
+            }
+        }
+         
+    }
 
     public int getWidth() {
         return getImage().getWidth();
@@ -501,7 +660,5 @@ animationCounter = animationCounter +1;}
         return getImage().getHeight();
 
     }
-    
-    
 
 }

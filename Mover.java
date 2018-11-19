@@ -27,6 +27,19 @@ public class Mover extends Actor {
         this.camera = camera;
         hasCamera = true;
     }
+    public boolean atWorldEdge()
+    {
+        if(getX() < 0) {
+            setLocation(0, getY());
+            return true;
+        }
+        if(getX() > TileEngine.MAP_WIDTH * TileEngine.TILE_WIDTH){
+            setLocation(TileEngine.MAP_WIDTH * TileEngine.TILE_WIDTH, getY());
+            return true;
+        }
+        else
+            return false;
+    }
 
     /**
      * Removes the camera if a camera has been set
