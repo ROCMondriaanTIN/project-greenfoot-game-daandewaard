@@ -16,12 +16,12 @@ public class Hero extends Mover {
     private int walking = 1;
     private int status = 0;
     private String richting = "rechts";
-    
+
     private final double acc;
     private final double drag;
     private boolean geraakt = false;
     private int pause = 50;
-    public static int levens = 3;
+    public static int levens = 2;
     public static boolean canJump;
     private GreenfootImage run1 = new GreenfootImage("p1_walk01.png");
     private GreenfootImage run2 = new GreenfootImage("p1_walk02.png");
@@ -56,7 +56,9 @@ public class Hero extends Mover {
     private GreenfootImage p3run9 = new GreenfootImage("p3_walk09.png");
     private GreenfootImage p3run10 = new GreenfootImage("p3_walk10.png");
     private GreenfootImage p3run11 = new GreenfootImage("p3_walk11.png");
+    public static boolean diamantAdded;
     
+
     public int animationCounter = 0;
     private int frame = 1;
     private static int teller = 1;
@@ -80,8 +82,6 @@ public class Hero extends Mover {
 
     }
     private static GreenfootImage[] mirror = new GreenfootImage[33];
- 
-
 
     public Hero() {
         super();
@@ -97,8 +97,7 @@ public class Hero extends Mover {
             setImage("p3_stand.png");
 
         }
-        
-        
+
         mirror[0] = new GreenfootImage("p1_walk01.png");
         mirror[1] = new GreenfootImage("p1_walk02.png");
         mirror[2] = new GreenfootImage("p1_walk03.png");
@@ -132,20 +131,11 @@ public class Hero extends Mover {
         mirror[30] = new GreenfootImage("p3_walk09.png");
         mirror[31] = new GreenfootImage("p3_walk10.png");
         mirror[32] = new GreenfootImage("p3_walk11.png");
-          
-         for(int i = 2; i < 32; i++)
-    {
-        mirror[i].mirrorHorizontally();
-    }
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+        for (int i = 2; i < 32; i++) {
+            mirror[i].mirrorHorizontally();
+        }
+
     }
 
     @Override
@@ -177,6 +167,16 @@ public class Hero extends Mover {
                 } else if (keyCollect == false) {
 
                 }
+
+            }
+        }
+        for (Actor actor : getIntersectingObjects(Tile.class)) {
+            Tile tile = (Tile) actor;
+            if (tile.getImage().toString().contains("gemYellow")) {
+               diamantAdded = true;
+               getWorld().removeObject(tile);
+
+                
 
             }
         }
@@ -330,29 +330,27 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("a")) {
 
             velocityX = -2;
-            
+
             animationCounter = animationCounter + 1;
             if (animationCounter % 6 == 0) {
                 animationLeft();
             }
 
-            
         } else if (Greenfoot.isKeyDown("d")) {
 
-           
             animationCounter = animationCounter + 1;
 
             if (animationCounter % 6 == 0) {
                 animationRight();
             }
             velocityX = 2;
-            
+
         }
 
     }
 
     private void animationRight() {
-       
+
         if (MyWorld.personage == 1) {
             switch (teller) {
                 case 1:
@@ -399,7 +397,7 @@ public class Hero extends Mover {
                 default:
                     teller = 1;
             }
-            
+
         } else if (MyWorld.personage == 2) {
             switch (teller) {
                 case 1:
@@ -493,10 +491,11 @@ public class Hero extends Mover {
                     teller = 1;
             }
         }
-         
+
     }
-     private void animationLeft() {
-       
+
+    private void animationLeft() {
+
         if (MyWorld.personage == 1) {
             switch (teller) {
                 case 1:
@@ -539,7 +538,7 @@ public class Hero extends Mover {
                     setImage(mirror[9]);
                     teller++;
                     break;
-                    case 11:
+                case 11:
                     setImage(mirror[10]);
                     teller++;
                     break;
@@ -547,7 +546,7 @@ public class Hero extends Mover {
                 default:
                     teller = 1;
             }
-            
+
         } else if (MyWorld.personage == 2) {
             switch (teller) {
                 case 1:
@@ -590,7 +589,7 @@ public class Hero extends Mover {
                     setImage(mirror[20]);
                     teller++;
                     break;
-                    case 11:
+                case 11:
                     setImage(mirror[21]);
                     teller++;
                     break;
@@ -640,7 +639,7 @@ public class Hero extends Mover {
                     setImage(mirror[31]);
                     teller++;
                     break;
-                    case 11:
+                case 11:
                     setImage(mirror[32]);
                     teller++;
                     break;
@@ -649,7 +648,7 @@ public class Hero extends Mover {
                     teller = 1;
             }
         }
-         
+
     }
 
     public int getWidth() {

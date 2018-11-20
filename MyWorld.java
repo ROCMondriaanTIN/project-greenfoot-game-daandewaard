@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 public class MyWorld extends World {
     static String personagestring;
     static int personage;
+    public static int diamantX = 60;
 
     private CollisionEngine ce;
     
@@ -73,8 +74,8 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero, 300, 200);
-        //addObject(hero, 7000, 200);    
+        //addObject(hero, 300, 200);
+        addObject(hero, 7000, 200);    
         //addObject(hero, 5000, 200);
         addObject(new Enemy(), 6823, 1945);
         addObject(new Enemy(), 3088, 2015);
@@ -84,6 +85,8 @@ public class MyWorld extends World {
         addObject(new PuntenTientallen(), 75, 200);
         addObject(new LevensIcon(), 100, 50);
         addObject(new StartScreen(), 500, 400);
+        
+        
         
        
   
@@ -99,5 +102,10 @@ public class MyWorld extends World {
     @Override
     public void act() {
         ce.update();
+        if (Hero.diamantAdded == true){
+        addObject (new Diamant(), diamantX, 150 );
+       
+        Hero.diamantAdded = false;
+        diamantX += 35;}
     }
 }
