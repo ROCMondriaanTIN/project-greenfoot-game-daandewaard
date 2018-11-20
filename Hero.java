@@ -1,5 +1,4 @@
 
-
 import greenfoot.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -58,7 +57,6 @@ public class Hero extends Mover {
     private GreenfootImage p3run10 = new GreenfootImage("p3_walk10.png");
     private GreenfootImage p3run11 = new GreenfootImage("p3_walk11.png");
     public static boolean diamantAdded;
-    
 
     public int animationCounter = 0;
     private int frame = 1;
@@ -141,7 +139,7 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
-        
+
         if (Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V"
         ) && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")) {
             velocityY = - 100;
@@ -174,10 +172,8 @@ public class Hero extends Mover {
         for (Actor actor : getIntersectingObjects(Tile.class)) {
             Tile tile = (Tile) actor;
             if (tile.getImage().toString().contains("gemYellow")) {
-               diamantAdded = true;
-               getWorld().removeObject(tile);
-
-                
+                diamantAdded = true;
+                getWorld().removeObject(tile);
 
             }
         }
@@ -207,7 +203,7 @@ public class Hero extends Mover {
             if (getWorld().getObjects(Hero.class).size() != 0) {
                 //Tile tile = (Tile) actor;
                 if (tile.getImage().toString().contains("Water")) {
-
+                    Greenfoot.playSound("water.wav");
                     Greenfoot.playSound("deathnew.wav");
                     while (pause != 0) {
                         geraakt = true;
@@ -229,12 +225,12 @@ public class Hero extends Mover {
 
                     levens--;
                     JOptionPane.showMessageDialog(
-                            null, "Je hebt nog  " + (levens) + " levens" );
+                            null, "Je hebt nog  " + (levens) + " levens");
                 }
 
                 if (levens == 0) {
-                    
-setLocation(300, 200);
+
+                    setLocation(300, 200);
                 }
                 continue;
             }
@@ -258,7 +254,7 @@ setLocation(300, 200);
 
                         levens--;
                         JOptionPane.showMessageDialog(
-                            null, "Je hebt nog  " + (levens) + " levens" );
+                                null, "Je hebt nog  " + (levens) + " levens");
                         setLocation(300, 200);
 
                         geraakt = false;
@@ -338,8 +334,7 @@ setLocation(300, 200);
             animationCounter = animationCounter + 1;
             if (animationCounter % 6 == 0) {
                 animationLeft();
-                
-                
+
             }
 //mirrorImg();
         } else if (Greenfoot.isKeyDown("d")) {
@@ -666,13 +661,10 @@ setLocation(300, 200);
 
     }
 
-    
-    public void mirrorImg(){
-    if(richting.equals("left")){
-    getImage().mirrorHorizontally();}}
-    
-    
-    
-    
-    
+    public void mirrorImg() {
+        if (richting.equals("left")) {
+            getImage().mirrorHorizontally();
+        }
+    }
+
 }
