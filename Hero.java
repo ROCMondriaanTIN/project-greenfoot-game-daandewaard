@@ -337,11 +337,11 @@ setLocation(300, 200);
 
             animationCounter = animationCounter + 1;
             if (animationCounter % 6 == 0) {
-                //animationLeft();
-                animationRight();
+                animationLeft();
+                
                 
             }
-mirrorImg();
+//mirrorImg();
         } else if (Greenfoot.isKeyDown("d")) {
 
             animationCounter = animationCounter + 1;
