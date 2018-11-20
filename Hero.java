@@ -337,9 +337,11 @@ setLocation(300, 200);
 
             animationCounter = animationCounter + 1;
             if (animationCounter % 6 == 0) {
-                animationLeft();
+                //animationLeft();
+                animationRight();
+                
             }
-
+mirrorImg();
         } else if (Greenfoot.isKeyDown("d")) {
 
             animationCounter = animationCounter + 1;
@@ -664,4 +666,13 @@ setLocation(300, 200);
 
     }
 
+    
+    public void mirrorImg(){
+    if(richting.equals("left")){
+    getImage().mirrorHorizontally();}}
+    
+    
+    
+    
+    
 }
