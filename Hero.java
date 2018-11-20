@@ -1,4 +1,5 @@
 
+
 import greenfoot.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -227,12 +228,13 @@ public class Hero extends Mover {
                     geraakt = false;
 
                     levens--;
-                    System.out.println(levens);
+                    JOptionPane.showMessageDialog(
+                            null, "Je hebt nog  " + (levens) + " levens" );
                 }
 
                 if (levens == 0) {
-                    getWorld().removeObject(this);
-
+                    
+setLocation(300, 200);
                 }
                 continue;
             }
@@ -255,6 +257,8 @@ public class Hero extends Mover {
                         Greenfoot.playSound("deathnew.wav");
 
                         levens--;
+                        JOptionPane.showMessageDialog(
+                            null, "Je hebt nog  " + (levens) + " levens" );
                         setLocation(300, 200);
 
                         geraakt = false;

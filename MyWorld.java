@@ -10,6 +10,7 @@ public class MyWorld extends World {
     static String personagestring;
     static int personage;
     public static int diamantX = 60;
+    public static boolean isGameOver;
 
     private CollisionEngine ce;
     
@@ -74,8 +75,8 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        //addObject(hero, 300, 200);
-        addObject(hero, 7000, 200);    
+        addObject(hero, 300, 200);
+        //addObject(hero, 7000, 200);    
         //addObject(hero, 5000, 200);
         addObject(new Enemy(), 6823, 1945);
         addObject(new Enemy(), 3088, 2015);
@@ -107,5 +108,18 @@ public class MyWorld extends World {
        
         Hero.diamantAdded = false;
         diamantX += 35;}
+        if (Hero.levens == 0)
+        {
+            isGameOver = true;
+            addObject (new StartScreen(), 500, 400);
+        }
+        
+        
+        
+        
+        
+        
+        
     }
+    
 }

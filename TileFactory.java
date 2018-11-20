@@ -110,7 +110,7 @@ public class TileFactory extends Hero   {
                 
                 break;
                 case 18:
-                tile = new Tile("bridgeLogs.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Tile("bridgeLogsWorking.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 
                 break;

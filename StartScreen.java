@@ -20,6 +20,15 @@ public class StartScreen extends Mover
     setImage("startup.png");
    if(Greenfoot.isKeyDown("space")){
    getWorld().removeObject(this);}}
-    }}
+   
+   if (MyWorld.isGameOver == true)
+   {
+       setImage("gameoverr.png");
+       if(Greenfoot.isKeyDown("space")){
+   getWorld().removeObject(this);
+       MyWorld.isGameOver = false;}
+   }
+    }
+}
     
 
