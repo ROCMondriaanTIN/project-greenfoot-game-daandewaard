@@ -53,7 +53,7 @@ public class CollisionEngine {
      * will not apply correctly
      */
     public void update() {
-        for (Mover mover : this.collidingActors) {
+        for (Mover mover : this.collidingActors){
             int actorLeft = getActorLeft(mover);
             int actorRight = getActorRight(mover);
             int actorTop = getActorTop(mover);

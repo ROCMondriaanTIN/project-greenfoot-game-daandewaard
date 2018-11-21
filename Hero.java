@@ -340,8 +340,8 @@ public class Hero extends Mover {
         } else if (Greenfoot.isKeyDown("d")) {
 
             animationCounter = animationCounter + 1;
-
-            if (animationCounter % 6 == 0) {
+    
+           if (animationCounter % 6 == 0) {
                 animationRight();
             }
             velocityX = 2;
