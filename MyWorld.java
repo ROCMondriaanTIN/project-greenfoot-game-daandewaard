@@ -68,8 +68,8 @@ public class MyWorld extends World {
            
         }; 
     
-/*else if ("2".equals(level)){
-        int[] [] map ={
+
+        int[] [] map2 ={
             {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -101,10 +101,10 @@ public class MyWorld extends World {
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,32,21,34,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22},
 {21,21,21,21,21,46,46,46,21,21,21,21,22,22,22,21,21,46,46,46,46,46,46,46,46,46,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22},
 };
-}
-*/
+
+
         
-        
+        if (level == 1){
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
         TileEngine te = new TileEngine(this, 70, 70, map);
         // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
@@ -143,6 +143,45 @@ public class MyWorld extends World {
         ce.addCollidingMover(hero);
         
     }
+        else{
+        // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
+        TileEngine te = new TileEngine(this, 70, 70, map2);
+        // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
+        // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
+        Camera camera = new Camera(te);
+        // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
+        // moet de klasse Mover extenden voor de camera om te werken
+        Hero hero = new Hero();
+
+        // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
+        camera.follow(hero);
+
+        // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
+        addObject(camera, 0, 0);
+        addObject(hero, 300, 200);
+        //addObject(hero, 7000, 200);    
+        //addObject(hero, 5000, 200);
+        addObject(new Enemy(), 6823, 1945);
+        addObject(new Enemy(), 3088, 2015);
+        addObject(new Enemy(), 7665, 1595);
+        addObject(new KeyIcon(), 100, 100);
+        addObject(new Punten(), 100, 200);
+        addObject(new PuntenTientallen(), 75, 200);
+        addObject(new LevensIcon(), 100, 50);
+        addObject(new StartScreen(), 500, 400);
+        
+        
+        
+       
+  
+        
+        // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
+        // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
+        ce = new CollisionEngine(te, camera);
+        // Toevoegen van de mover instantie of een extentie hiervan
+        ce.addCollidingMover(hero);
+        
+    }}
         
     @Override
     public void act() {
