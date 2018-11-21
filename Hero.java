@@ -139,6 +139,7 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        
 
         if (Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V"
         ) && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")) {
