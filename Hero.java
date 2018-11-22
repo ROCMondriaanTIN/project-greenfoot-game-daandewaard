@@ -356,6 +356,7 @@ public class Hero extends Mover {
 
             if (Greenfoot.isKeyDown("space") && (isTouching(Tile.class) && (velocityY <= 0))) {
                 velocityY = -20;
+                setImage("p1_jump.png");
             }
         }
     }
