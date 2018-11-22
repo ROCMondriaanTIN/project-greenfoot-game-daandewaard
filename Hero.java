@@ -264,7 +264,9 @@ public class Hero extends Mover {
                         continue;
 
                     }
+                    
                 }
+                
                 /* for (Actor enemy2 : getIntersectingObjects(Enemy.class)) {
                     if (enemy != null) {
                         Greenfoot.playSound("deathnew.wav");
@@ -309,6 +311,42 @@ public class Hero extends Mover {
                  
                 }
                  */            }
+            for (Tile tile : getIntersectingObjects(Tile.class)) {
+            if (getWorld().getObjects(Hero.class).size() != 0) {
+                //Tile tile = (Tile) actor;
+                if (tile.getImage().toString().contains("fireball")) {
+                    
+                    Greenfoot.playSound("deathnew.wav");
+                    while (pause != 0) {
+                        geraakt = true;
+                        if (MyWorld.personage == 1) {
+                            setImage("p1_hurt.png");
+                        } else if (MyWorld.personage == 2) {
+                            setImage("p2_hurt.png");
+                        } else {
+                            setImage("p3_hurt.png");
+                        }
+                        pause--;
+                        return;
+                    }
+                    pause = 50;
+
+                    setLocation(300, 200);
+                    setImage("p1.png");
+                    geraakt = false;
+
+                    levens--;
+                    JOptionPane.showMessageDialog(
+                            null, "Je hebt nog  " + (levens) + " levens");
+                }
+
+                if (levens == 0) {
+
+                    setLocation(300, 200);
+                }
+                continue;
+            }
+        }
 
         }
     }
