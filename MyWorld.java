@@ -158,9 +158,9 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        //addObject(hero, 300, 200);
+        addObject(hero, 300, 200);
         //addObject(hero, 7000, 200);    
-        addObject(hero, 1582, 900);
+        //addObject(hero, 1582, 900);
         
         addObject(new Enemy(), 1582, 757);
         addObject(new Enemy(), 2343, 617);
