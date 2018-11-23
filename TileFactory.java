@@ -238,7 +238,7 @@ public class TileFactory extends Hero   {
                 tile = new Tile("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, "water");
                             
                 break;
-                case 45:
+                case 45: 
                 tile  = new Tile("liquidWaterTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, "water");
                
          
