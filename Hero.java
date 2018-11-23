@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -270,7 +269,6 @@ public class Hero extends Mover {
                 /* for (Actor enemy2 : getIntersectingObjects(Enemy.class)) {
                     if (enemy != null) {
                         Greenfoot.playSound("deathnew.wav");
-
                         while (pause != 0) {
                             geraakt = true;
                             setImage("p1_hurt.png");
@@ -278,7 +276,6 @@ public class Hero extends Mover {
                             return;
                         }
                         pause = 50;
-
                         setLocation(300, 200);
                         setImage("p1.png");
                     }
@@ -286,11 +283,9 @@ public class Hero extends Mover {
                     levens--;
                     System.out.println(levens);
                 }
-
                 if (levens == 0) {
                     getWorld().removeObject(this);
                     
-
                 } 
                 for (Tile tile : getIntersectingObjects(Tile.class)){
                     System.out.println(Tile.tileNum);
@@ -303,7 +298,6 @@ public class Hero extends Mover {
                         return;
                     }
                     pause = 50;
-
                     setLocation(300, 200);
                     setImage("p1.png");
                      
@@ -356,13 +350,6 @@ public class Hero extends Mover {
 
             if (Greenfoot.isKeyDown("space") && (isTouching(Tile.class) && (velocityY <= 0))) {
                 velocityY = -20;
-                if (MyWorld.personage == 1){
-                setImage("p1_jump.png");
-                }
-                else if (MyWorld.personage == 2){
-                setImage("p2_jump.png");}
-                else{
-                setImage("p3_jump.png");}
             }
         }
     }
