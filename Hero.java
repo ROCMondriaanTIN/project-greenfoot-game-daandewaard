@@ -176,6 +176,8 @@ public class Hero extends Mover {
                     }
                     
                     getWorld().removeObject(this);
+                    JOptionPane.showMessageDialog(
+                            null, "Je hebt " + aantalMunten + " munten verzameld");
                 } else if (keyCollect == false) {
 
                 }
