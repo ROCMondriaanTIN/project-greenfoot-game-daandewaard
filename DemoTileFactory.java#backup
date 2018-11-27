@@ -1,20 +1,18 @@
-    
+
 /**
  *
  * @author R. Springer
  */
 public class DemoTileFactory extends TileFactory {
-    /*
-    
 
     /**
      * Voorbeeld hoe je een TileFactory kan gebruiken. Hierin zit de toegevoegde
      * TileType zie case: 1, 2, 6, 7, 8, 9, 10
      * @param mapIcon
      * @return 
-     
+     */
     @Override
-    public Tile createTile(int mapIcon) {
+    /*public Tile createTile(int mapIcon) {
         Tile tile;
         switch (mapIcon) {
             case 0:
@@ -79,7 +77,7 @@ public class DemoTileFactory extends TileFactory {
                 tile.isSolid = true;
                 break;
         }
-        return tile;}
-    */ }
-    
-
+        return tile;
+    }
+}
+}

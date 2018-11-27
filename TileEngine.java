@@ -111,8 +111,8 @@ public class TileEngine {
                 // Dus er wordt geen tile aangemaakt. -1 is dus geen tile;
                 Tile createdTile = this.tileFactory.createTile(mapIcon);
 
-                createdTile.setMapID(mapID);
-                createdTile.setMapIcon(mapIcon);
+               // createdTile.setMapID(mapID);
+                //createdTile.setMapIcon(mapIcon);
 
                 addTileAt(createdTile, x, y);
             }
@@ -137,8 +137,8 @@ public class TileEngine {
         // Toevoegen aan onze lokale array. Makkelijk om de tile op te halen
         // op basis van een x en y positie van de map
         this.generateMap[row][colom] = tile;
-        tile.setColom(colom);
-        tile.setRow(row);
+        //tile.setColom(colom);
+        //tile.setRow(row);
     }
 
     /**
@@ -212,14 +212,14 @@ public class TileEngine {
      * @param tile Tile from the tilemap
      * @return true if the tile has successfully been removed
      */
-    public boolean removeTile(Tile tile) {
+    /*public  boolean removeTile(Tile tile) {
         int colom = tile.getColom();
         int row = tile.getRow();
         if (colom != -1 && row != -1) {
             return this.removeTileAt(colom, row);
         }
         return false;
-    }
+    }*/
 
     /**
      * This methode checks if a tile on a x and y position in the world is solid
