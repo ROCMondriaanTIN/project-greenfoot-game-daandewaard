@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Hero
-comment0.text=\r\n\r\n\ @author\ R.\ Springer\r\n
+comment0.text=\r\n\r\n\ @author\ D.\ de\ Waard\r\n
 comment1.params=canJump
 comment1.target=boolean\ jumpEnabled(boolean)
 comment10.params=

@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author R. Springer
+ * @author D. de Waard
  */
 public class Hero extends Mover {
 
@@ -56,6 +56,7 @@ public class Hero extends Mover {
     private GreenfootImage p3run10 = new GreenfootImage("p3_walk10.png");
     private GreenfootImage p3run11 = new GreenfootImage("p3_walk11.png");
     public static boolean diamantAdded;
+    public int Munten;
 
     public int animationCounter = 0;
     private int frame = 1;
@@ -175,9 +176,29 @@ public class Hero extends Mover {
                                     + "D2SNY om het level te spelen");
                     }
                     
-                    getWorld().removeObject(this);
+                    
                     JOptionPane.showMessageDialog(
-                            null, "Je hebt " + aantalMunten + " munten verzameld");
+                            null, "Je hebt " + Munten + " munten verzameld");
+                    Munten =0;
+                    aantalMunten=0;
+                    MyWorld.startup = false;
+                    if (MyWorld.level == 1)
+                    {
+                       MyWorld.level = 2;
+                    }
+                    else if (MyWorld.level == 2)
+                    {
+                       MyWorld.level = 3;
+                    }
+                    else if (MyWorld.level == 3)
+                    {
+                       MyWorld.level = 4;
+                    }
+                    else
+                    {
+                        getWorld().removeObject(this);
+                    }
+                    Greenfoot.setWorld(new MyWorld());
                 } else if (keyCollect == false) {
 
                 }
@@ -198,6 +219,7 @@ public class Hero extends Mover {
             if (tile.getImage().toString().contains("coinGold")) {
                 getWorld().removeObject(tile);
                 aantalMunten += 2;
+                Munten ++;
             }
 
         }
@@ -206,6 +228,7 @@ public class Hero extends Mover {
             if (tile.getImage().toString().contains("coinSilver")) {
                 getWorld().removeObject(tile);
                 aantalMunten++;
+                Munten++;
             }
 
         }
@@ -370,7 +393,7 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("p")) {
+       if (Greenfoot.isKeyDown("p")) {
             velocityY = -20;
             animationCounter = animationCounter + 1;
         }
@@ -380,7 +403,7 @@ public class Hero extends Mover {
             velocityX = -2;
 
             animationCounter = animationCounter + 1;
-            if (animationCounter % 6 == 0) {
+            if (animationCounter % 5 == 0) {
                 animationLeft();
 
             }
@@ -389,7 +412,7 @@ public class Hero extends Mover {
 
             animationCounter = animationCounter + 1;
     
-           if (animationCounter % 6 == 0) {
+           if (animationCounter % 5 == 0) {
                 animationRight();
             }
             velocityX = 2;
@@ -539,6 +562,7 @@ public class Hero extends Mover {
                 default:
                     teller = 1;
             }
+            
         }
 
     }
@@ -711,7 +735,7 @@ public class Hero extends Mover {
 
     public void mirrorImg() {
         if (richting.equals("left")) {
-            getImage().mirrorHorizontally();
+           getImage().mirrorHorizontally();
         }
     }
 
