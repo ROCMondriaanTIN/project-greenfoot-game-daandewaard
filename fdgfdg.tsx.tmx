@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tileset version="1.2" tiledversion="1.2.0" name="fdgfdg" tilewidth="70" tileheight="70" tilecount="51" columns="0">
+ <grid orientation="orthogonal" width="1" height="1"/>
+ <tile id="0">
+  <image width="70" height="70" source="images/box.png"/>
+ </tile>
+ <tile id="1">
+  <image width="70" height="70" source="images/boxAlt.png"/>
+ </tile>
+ <tile id="2">
+  <image width="70" height="70" source="images/boxCoin.png"/>
+ </tile>
+ <tile id="3">
+  <image width="70" height="70" source="images/boxCoin_disabled.png"/>
+ </tile>
+ <tile id="4">
+  <image width="70" height="70" source="images/boxCoinAlt.png"/>
+ </tile>
+ <tile id="5">
+  <image width="70" height="70" source="images/boxCoinAlt_disabled.png"/>
+ </tile>
+ <tile id="6">
+  <image width="70" height="70" source="images/boxEmpty.png"/>
+ </tile>
+ <tile id="7">
+  <image width="70" height="70" source="images/boxExplosive.png"/>
+ </tile>
+ <tile id="8">
+  <image width="70" height="70" source="images/boxExplosive_disabled.png"/>
+ </tile>
+ <tile id="9">
+  <image width="70" height="70" source="images/boxExplosiveAlt.png"/>
+ </tile>
+ <tile id="10">
+  <image width="70" height="70" source="images/boxItem.png"/>
+ </tile>
+ <tile id="11">
+  <image width="70" height="70" source="images/boxItem_disabled.png"/>
+ </tile>
+ <tile id="12">
+  <image width="70" height="70" source="images/boxItemAlt.png"/>
+ </tile>
+ <tile id="13">
+  <image width="70" height="70" source="images/boxItemAlt_disabled.png"/>
+ </tile>
+ <tile id="14">
+  <image width="70" height="70" source="images/boxWarning.png"/>
+ </tile>
+ <tile id="15">
+  <image width="70" height="70" source="images/brickWall.png"/>
+ </tile>
+ <tile id="16">
+  <image width="70" height="70" source="images/bridge.png"/>
+ </tile>
+ <tile id="17">
+  <image width="70" height="70" source="images/bridgeLogs.png"/>
+ </tile>
+ <tile id="18">
+  <image width="70" height="70" source="images/bridgeLogsWorking.png"/>
+ </tile>
+ <tile id="19">
+  <image width="70" height="70" source="images/fence.png"/>
+ </tile>
+ <tile id="20">
+  <image width="70" height="70" source="images/fenceBroken.png"/>
+ </tile>
+ <tile id="21">
+  <image width="70" height="70" source="images/grass.png"/>
+ </tile>
+ <tile id="22">
+  <image width="70" height="70" source="images/grassCenter.png"/>
+ </tile>
+ <tile id="23">
+  <image width="70" height="70" source="images/grassCenter_rounded.png"/>
+ </tile>
+ <tile id="24">
+  <image width="70" height="70" source="images/grassCliffLeft.png"/>
+ </tile>
+ <tile id="25">
+  <image width="70" height="70" source="images/grassCliffLeftAlt.png"/>
+ </tile>
+ <tile id="26">
+  <image width="70" height="70" source="images/grassCliffRight.png"/>
+ </tile>
+ <tile id="27">
+  <image width="70" height="70" source="images/grassCliffRightAlt.png"/>
+ </tile>
+ <tile id="28">
+  <image width="70" height="70" source="images/grassHalf.png"/>
+ </tile>
+ <tile id="29">
+  <image width="70" height="70" source="images/grassHalfLeft.png"/>
+ </tile>
+ <tile id="30">
+  <image width="70" height="70" source="images/grassHalfMid.png"/>
+ </tile>
+ <tile id="31">
+  <image width="70" height="70" source="images/grassHalfRight.png"/>
+ </tile>
+ <tile id="32">
+  <image width="70" height="70" source="images/grassHillLeft.png"/>
+ </tile>
+ <tile id="33">
+  <image width="70" height="70" source="images/grassHillLeft2.png"/>
+ </tile>
+ <tile id="34">
+  <image width="70" height="70" source="images/grassHillRight.png"/>
+ </tile>
+ <tile id="35">
+  <image width="70" height="70" source="images/grassHillRight2.png"/>
+ </tile>
+ <tile id="36">
+  <image width="5" height="24" source="images/grassLedgeLeft.png"/>
+ </tile>
+ <tile id="37">
+  <image width="5" height="24" source="images/grassLedgeRight.png"/>
+ </tile>
+ <tile id="38">
+  <image width="70" height="70" source="images/grassLeft.png"/>
+ </tile>
+ <tile id="39">
+  <image width="70" height="70" source="images/grassMid.png"/>
+ </tile>
+ <tile id="40">
+  <image width="70" height="70" source="images/grassRight.png"/>
+ </tile>
+ <tile id="41">
+  <image width="70" height="70" source="images/ladder_mid.png"/>
+ </tile>
+ <tile id="42">
+  <image width="70" height="70" source="images/ladder_top.png"/>
+ </tile>
+ <tile id="43">
+  <image width="70" height="70" source="images/lock_yellow.png"/>
+ </tile>
+ <tile id="44">
+  <image width="70" height="70" source="images/liquidWater.png"/>
+ </tile>
+ <tile id="45">
+  <image width="70" height="70" source="images/liquidWaterTop.png"/>
+ </tile>
+ <tile id="46">
+  <image width="70" height="70" source="images/liquidWaterTop_mid.png"/>
+ </tile>
+ <tile id="47">
+  <image width="70" height="70" source="images/coinGold.png"/>
+ </tile>
+ <tile id="48">
+  <image width="70" height="70" source="images/coinSilver.png"/>
+ </tile>
+ <tile id="49">
+  <image width="70" height="70" source="images/fireball.png"/>
+ </tile>
+ <tile id="50">
+  <image width="70" height="70" source="images/keyYellow.png"/>
+ </tile>
+</tileset>

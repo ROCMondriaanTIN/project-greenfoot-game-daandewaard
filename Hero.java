@@ -175,6 +175,19 @@ public class Hero extends Mover {
                             null, "Level 3 is nu beschikbaar! gebruik de code "
                                     + "D2SNY om het level te spelen");
                     }
+                    else if (MyWorld.level == 3)
+                    {
+                        
+                        JOptionPane.showMessageDialog(
+                            null, "Level 3 is nu beschikbaar! gebruik de code "
+                                    + "EJ48C om het level te spelen");
+                        
+                    }
+                    else if (MyWorld.level == 4)
+                    {
+                        JOptionPane.showMessageDialog(
+                            null, "Gefeliciteerd, je hebt de game voltooid!");
+                    }
                     
                     
                     JOptionPane.showMessageDialog(
