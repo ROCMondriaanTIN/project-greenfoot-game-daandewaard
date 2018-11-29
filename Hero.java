@@ -381,6 +381,7 @@ public class Hero extends Mover {
        if (Greenfoot.isKeyDown("p")) {
             velocityY = -20;
             animationCounter = animationCounter + 1;
+            
         }
 
         if (Greenfoot.isKeyDown("a")) {
@@ -533,7 +534,7 @@ public class Hero extends Mover {
                     break;
                 case 8:
                     setImage(p3run8);
-                    teller++;
+                    teller++; 
                     break;
                 case 9:
                     setImage(p3run9);
