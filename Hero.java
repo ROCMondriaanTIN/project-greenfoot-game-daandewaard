@@ -163,55 +163,15 @@ public class Hero extends Mover {
                 if (keyCollect == true) {
                     JOptionPane.showMessageDialog(
                             null, "Level voltooid");
-                    if (MyWorld.level == 1)
-                    {
-                        JOptionPane.showMessageDialog(
-                            null, "Level 2 is nu beschikbaar! gebruik de code "
-                                    + "AJ3D9 om het level te spelen");
-                    }
-                    else if (MyWorld.level == 2)
-                    {
-                        JOptionPane.showMessageDialog(
-                            null, "Level 3 is nu beschikbaar! gebruik de code "
-                                    + "D2SNY om het level te spelen");
-                    }
-                    else if (MyWorld.level == 3)
-                    {
-                        
-                        JOptionPane.showMessageDialog(
-                            null, "Level 3 is nu beschikbaar! gebruik de code "
-                                    + "EJ48C om het level te spelen");
-                        
-                    }
-                    else if (MyWorld.level == 4)
-                    {
-                        JOptionPane.showMessageDialog(
-                            null, "Gefeliciteerd, je hebt de game voltooid!");
-                    }
+                    
                     
                     
                     JOptionPane.showMessageDialog(
                             null, "Je hebt " + Munten + " munten verzameld");
                     Munten =0;
                     aantalMunten=0;
-                    MyWorld.startup = false;
-                    if (MyWorld.level == 1)
-                    {
-                       MyWorld.level = 2;
-                    }
-                    else if (MyWorld.level == 2)
-                    {
-                       MyWorld.level = 3;
-                    }
-                    else if (MyWorld.level == 3)
-                    {
-                       MyWorld.level = 4;
-                    }
-                    else
-                    {
-                        getWorld().removeObject(this);
-                    }
-                    Greenfoot.setWorld(new MyWorld());
+                    
+                    Greenfoot.setWorld(new Level2());
                 } else if (keyCollect == false) {
 
                 }
