@@ -56,7 +56,7 @@ public class Hero extends Mover {
     private GreenfootImage p3run10 = new GreenfootImage("p3_walk10.png");
     private GreenfootImage p3run11 = new GreenfootImage("p3_walk11.png");
     public static boolean diamantAdded;
-    public static int huidigLevel;
+    public static int huidigLevel = 1;
     public int Munten;
 
     public int animationCounter = 0;
@@ -171,13 +171,18 @@ public class Hero extends Mover {
                             null, "Je hebt " + Munten + " munten verzameld");
                     Munten =0;
                     aantalMunten=0;
+                    getWorld().removeObject(tile);
                     if (huidigLevel == 1)
                     {
-                    Greenfoot.setWorld(new Level2());
+                        Greenfoot.setWorld(new Level2());
+                        huidigLevel =2;
+                        break;
                     }
                     else if (huidigLevel == 2)
                     {
                         Greenfoot.setWorld(new Level3());
+                        huidigLevel = 3 ;
+                        break;
                     }
                 } else if (keyCollect == false) {
 
