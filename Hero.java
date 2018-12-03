@@ -140,7 +140,7 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
-        
+        // System.out.println(isTouching(Tile.class));
 
         if (Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V"
         ) && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")) {
@@ -409,146 +409,145 @@ public class Hero extends Mover {
 
     private void animationRight() {
 
-        if (MyWorld.personage == 1) {
-            switch (teller) {
-                case 1:
-                    setImage(run1);
-                    teller++;
-                    break;
-                case 2:
-                    setImage(run2);
-                    teller++;
-                    break;
-                case 3:
-                    setImage(run3);
-                    teller++;
-                    break;
-                case 4:
-                    setImage(run4);
-                    teller++;
-                    break;
-                case 5:
-                    setImage(run5);
-                    teller++;
-                    break;
-                case 6:
-                    setImage(run6);
-                    teller++;
-                    break;
-                case 7:
-                    setImage(run7);
-                    teller++;
-                    break;
-                case 8:
-                    setImage(run8);
-                    teller++;
-                    break;
-                case 9:
-                    setImage(run9);
-                    teller++;
-                    break;
-                case 10:
-                    setImage(run10);
-                    teller++;
-                    break;
-
-                default:
-                    teller = 1;
-            }
-
-        } else if (MyWorld.personage == 2) {
-            switch (teller) {
-                case 1:
-                    setImage(p2run1);
-                    teller++;
-                    break;
-                case 2:
-                    setImage(p2run2);
-                    teller++;
-                    break;
-                case 3:
-                    setImage(p2run3);
-                    teller++;
-                    break;
-                case 4:
-                    setImage(p2run4);
-                    teller++;
-                    break;
-                case 5:
-                    setImage(p2run5);
-                    teller++;
-                    break;
-                case 6:
-                    setImage(p2run6);
-                    teller++;
-                    break;
-                case 7:
-                    setImage(p2run7);
-                    teller++;
-                    break;
-                case 8:
-                    setImage(p2run8);
-                    teller++;
-                    break;
-                case 9:
-                    setImage(p2run9);
-                    teller++;
-                    break;
-                case 10:
-                    setImage(p2run10);
-                    teller++;
-                    break;
-
-                default:
-                    teller = 1;
-            }
-        } else {
-            switch (teller) {
-                case 1:
-                    setImage(p3run1);
-                    teller++;
-                    break;
-                case 2:
-                    setImage(p3run2);
-                    teller++;
-                    break;
-                case 3:
-                    setImage(p3run3);
-                    teller++;
-                    break;
-                case 4:
-                    setImage(p3run4);
-                    teller++;
-                    break;
-                case 5:
-                    setImage(p3run5);
-                    teller++;
-                    break;
-                case 6:
-                    setImage(p3run6);
-                    teller++;
-                    break;
-                case 7:
-                    setImage(p3run7);
-                    teller++;
-                    break;
-                case 8:
-                    setImage(p3run8);
-                    teller++; 
-                    break;
-                case 9:
-                    setImage(p3run9);
-                    teller++;
-                    break;
-                case 10:
-                    setImage(p3run10);
-                    teller++;
-                    break;
-
-                default:
-                    teller = 1;
-            }
-            
+        switch (MyWorld.personage) {
+            case 1:
+                switch (teller) {
+                    case 1:
+                        setImage(run1);
+                        teller++;
+                        break;
+                    case 2:
+                        setImage(run2);
+                        teller++;
+                        break;
+                    case 3:
+                        setImage(run3);
+                        teller++;
+                        break;
+                    case 4:
+                        setImage(run4);
+                        teller++;
+                        break;
+                    case 5:
+                        setImage(run5);
+                        teller++;
+                        break;
+                    case 6:
+                        setImage(run6);
+                        teller++;
+                        break;
+                    case 7:
+                        setImage(run7);
+                        teller++;
+                        break;
+                    case 8:
+                        setImage(run8);
+                        teller++;
+                        break;
+                    case 9:
+                        setImage(run9);
+                        teller++;
+                        break;
+                    case 10:
+                        setImage(run10);
+                        teller++;
+                        break;
+                        
+                    default:
+                        teller = 1;
+                }   break;
+            case 2:
+                switch (teller) {
+                    case 1:
+                        setImage(p2run1);
+                        teller++;
+                        break;
+                    case 2:
+                        setImage(p2run2);
+                        teller++;
+                        break;
+                    case 3:
+                        setImage(p2run3);
+                        teller++;
+                        break;
+                    case 4:
+                        setImage(p2run4);
+                        teller++;
+                        break;
+                    case 5:
+                        setImage(p2run5);
+                        teller++;
+                        break;
+                    case 6:
+                        setImage(p2run6);
+                        teller++;
+                        break;
+                    case 7:
+                        setImage(p2run7);
+                        teller++;
+                        break;
+                    case 8:
+                        setImage(p2run8);
+                        teller++;
+                        break;
+                    case 9:
+                        setImage(p2run9);
+                        teller++;
+                        break;
+                    case 10:
+                        setImage(p2run10);
+                        teller++;
+                        break;
+                        
+                    default:
+                        teller = 1;
+                }   break;
+            default:
+                switch (teller) {
+                    case 1:
+                        setImage(p3run1);
+                        teller++;
+                        break;
+                    case 2:
+                        setImage(p3run2);
+                        teller++;
+                        break;
+                    case 3:
+                        setImage(p3run3);
+                        teller++;
+                        break;
+                    case 4:
+                        setImage(p3run4);
+                        teller++;
+                        break;
+                    case 5:
+                        setImage(p3run5);
+                        teller++;
+                        break;
+                    case 6:
+                        setImage(p3run6);
+                        teller++;
+                        break;
+                    case 7:
+                        setImage(p3run7);
+                        teller++;
+                        break;
+                    case 8:
+                        setImage(p3run8);
+                        teller++;
+                        break;
+                    case 9:
+                        setImage(p3run9);
+                        teller++;
+                        break;
+                    case 10:
+                        setImage(p3run10);
+                        teller++;
+                        break;
+                        
+                    default:
+                        teller = 1;
+                }   break;
         }
 
     }
