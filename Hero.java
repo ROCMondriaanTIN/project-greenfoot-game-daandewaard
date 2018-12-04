@@ -466,6 +466,7 @@ public class Hero extends Mover {
                         break;
                         
                     default:
+                        setImage(run1);
                         teller = 1;
                 }   break;
             case 2:
@@ -512,7 +513,9 @@ public class Hero extends Mover {
                         break;
                         
                     default:
+                        setImage(p2run1);
                         teller = 1;
+                        
                 }   break;
             default:
                 switch (teller) {
@@ -558,7 +561,9 @@ public class Hero extends Mover {
                         break;
                         
                     default:
+                        setImage(p3run1);
                         teller = 1;
+                        
                 }   break;
         }
 
@@ -614,6 +619,7 @@ public class Hero extends Mover {
                     break;
 
                 default:
+                    setImage(mirror[0]);
                     teller = 1;
             }
 
@@ -665,6 +671,7 @@ public class Hero extends Mover {
                     break;
 
                 default:
+                    setImage(mirror[11]);
                     teller = 1;
             }
         } else {
@@ -715,6 +722,7 @@ public class Hero extends Mover {
                     break;
 
                 default:
+                    setImage(mirror[22]);
                     teller = 1;
             }
         }
