@@ -169,7 +169,7 @@ public class Level3 extends World {
         addObject(hero, 300, 200);
         //addObject(hero, 7000, 200);    
         //addObject(hero, 1582, 900);
-        
+        this.setBackground("bg.png");
         addObject(new Enemy(), 1108, 1667);
         addObject(new Enemy(), 2879, 1737);
         addObject(new Enemy(), 5668, 2017);
