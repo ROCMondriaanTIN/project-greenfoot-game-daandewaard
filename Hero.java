@@ -142,7 +142,11 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
-        if (isTouching(Tile.class) == false && (velocityY <= 0))
+        if (Greenfoot.isKeyDown("Q"))
+        {
+            setLocation(8000, 800);
+        }
+        /*if (isTouching(Tile.class) == false && (velocityY <= 0))
         {
             if (MyWorld.personage == 1)
             {
@@ -174,6 +178,7 @@ public class Hero extends Mover {
             }
             hasJumped = false;
         }
+        */
         
         
         
@@ -420,6 +425,18 @@ public class Hero extends Mover {
 
             if (Greenfoot.isKeyDown("space") && (isTouching(Tile.class) && (velocityY <= 0))) {
                 velocityY = -20;
+                if (MyWorld.personage == 1)
+                {
+                setImage("p1_jump.png");
+                }
+                else if (MyWorld.personage == 2)
+                {
+                    setImage("p2_jump.png");
+                }
+                else
+                {
+                    setImage("p3_jump.png");
+                }
             }
         }
     }
@@ -455,7 +472,8 @@ public class Hero extends Mover {
     }
 
     private void animationRight() {
-
+//if (isTouching(Tile.class)== true)
+{
         switch (MyWorld.personage) {
             case 1:
                 switch (teller) {
@@ -603,9 +621,11 @@ public class Hero extends Mover {
         }
 
     }
+    }
 
     private void animationLeft() {
-
+//if (isTouching(Tile.class)== true)
+{
         if (MyWorld.personage == 1) {
             switch (teller) {
                 case 1:
@@ -763,7 +783,7 @@ public class Hero extends Mover {
         }
 
     }
-
+    }
     public int getWidth() {
         return getImage().getWidth();
     }

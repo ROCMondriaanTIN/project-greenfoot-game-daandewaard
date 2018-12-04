@@ -3,7 +3,7 @@
  *
  * @author R. Springer
  */
-public class TileFactory extends Hero   {
+public class TileFactory   {
 
     /**
      * Creates a Tile object based on the mapIcon number you give
