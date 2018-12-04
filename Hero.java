@@ -66,6 +66,7 @@ public class Hero extends Mover {
     public static boolean keyNotFound = false;
     public static int aantalMunten;
     public static boolean isMirrored;
+    public boolean hasJumped;
   
 
     public boolean jumpEnabled(boolean canJump) {
@@ -141,6 +142,40 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        if (isTouching(Tile.class) == false && (velocityY <= 0))
+        {
+            if (MyWorld.personage == 1)
+            {
+            setImage("p1_jump.png");
+            }
+            else if (MyWorld.personage == 2)
+            {
+                setImage("p2_jump.png");
+            }
+            else if (MyWorld.personage == 3)
+            {
+                setImage ("p3_jump.png");
+            }
+            hasJumped = true;
+        }
+        if (isTouching(Tile.class) && hasJumped == true)
+        {
+            if (MyWorld.personage == 1)
+            {
+            setImage("p1.png");
+            }
+            else if (MyWorld.personage == 2)
+            {
+                setImage("p2_stand.png");
+            }
+            else if (MyWorld.personage == 3)
+            {
+                setImage ("p3_stand.png");
+            }
+            hasJumped = false;
+        }
+        
+        
         
         // System.out.println(isTouching(Tile.class));
 
