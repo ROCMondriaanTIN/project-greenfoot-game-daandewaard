@@ -66,6 +66,7 @@ public class Hero extends Mover {
     public static boolean keyNotFound = false;
     public static int aantalMunten;
     public static boolean isMirrored;
+  
 
     public boolean jumpEnabled(boolean canJump) {
         Hero.canJump = canJump;
@@ -140,10 +141,11 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        
         // System.out.println(isTouching(Tile.class));
 
-        if (Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V"
-        ) && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")) {
+        if (Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V")
+                && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")) {
             velocityY = - 100;
         }
 
@@ -183,6 +185,16 @@ public class Hero extends Mover {
                         Greenfoot.setWorld(new Level3());
                         huidigLevel = 3 ;
                         break;
+                    }
+                    else if (huidigLevel == 3)
+                    {
+                     Greenfoot.setWorld(new Level4());
+                     huidigLevel = 4;
+                     break;
+                    }
+                    else if (huidigLevel == 4)
+                    {
+                        
                     }
                 } else if (keyCollect == false) {
 
