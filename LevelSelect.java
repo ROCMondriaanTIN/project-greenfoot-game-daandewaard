@@ -8,6 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class LevelSelect extends World
 {
+    public static boolean lvl2A;
+    public static boolean lvl3A;
+    public static boolean lvl4A;
+    public static boolean diamantA;
 
     /**
      * Constructor for objects of class LevelSelect.

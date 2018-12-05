@@ -17,8 +17,12 @@ public class Level2B extends Levels
          setImage("level2.png");
          if (Greenfoot.mouseClicked(this))
         {
+            if (LevelSelect.lvl2A == true){
             MyWorld.firstStart = false;
+            Hero.huidigLevel = 2;
                Greenfoot.setWorld(new Level2());
+            }
+            else{Greenfoot.setWorld(new NietBeschikbaar());}
 
         }
         // Add your action code here.

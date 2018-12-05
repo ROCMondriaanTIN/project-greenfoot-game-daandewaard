@@ -18,11 +18,16 @@ public class Level4B extends Levels
          setImage("level4.png");
          if (Greenfoot.mouseClicked(this))
         {
+            if (LevelSelect.lvl4A == true){
             MyWorld.firstStart = false;
+            Hero.huidigLevel = 4;
                Greenfoot.setWorld(new Level4());
 
         }
-    }    
+            else{
+                Greenfoot.setWorld(new NietBeschikbaar());
+            }
+    }    }
     
     
 }

@@ -18,7 +18,8 @@ public class Level1B extends Levels
         setImage("level1.png");
         if (Greenfoot.mouseClicked(this))
         {
-            MyWorld.firstStart = false;
+            
+            Hero.huidigLevel = 1;
                Greenfoot.setWorld(new Level1());
 
         }

@@ -17,10 +17,13 @@ public class Level3B extends Levels
          setImage("level3.png");
          if (Greenfoot.mouseClicked(this))
         {
+            if (LevelSelect.lvl3A == true){
             MyWorld.firstStart = false;
+            Hero.huidigLevel = 3;
                Greenfoot.setWorld(new Level3());
 
         }
+            else{Greenfoot.setWorld(new NietBeschikbaar());}}
         // Add your action code here.
     }    
 }

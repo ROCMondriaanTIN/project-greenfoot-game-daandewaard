@@ -218,28 +218,38 @@ public class Hero extends Mover {
                     getWorld().removeObject(tile);
                     if (huidigLevel == 1)
                     {
-                        Greenfoot.setWorld(new Level2());
-                        huidigLevel =2;
+                        
+                        keyCollect = false;
+                        LevelSelect.lvl2A = true;
+                        Greenfoot.setWorld(new LevelSelect());
                         break;
                     }
                     else if (huidigLevel == 2)
                     {
-                        Greenfoot.setWorld(new Level3());
-                        huidigLevel = 3 ;
+                        
+                        keyCollect = false;
+                        LevelSelect.lvl3A = true;
+                        Greenfoot.setWorld(new LevelSelect());
                         break;
                     }
                     else if (huidigLevel == 3)
                     {
-                     Greenfoot.setWorld(new Level4());
-                     huidigLevel = 4;
-                     break;
+                     
+                        keyCollect = false;
+                        LevelSelect.lvl4A = true;
+                        Greenfoot.setWorld(new LevelSelect());
+                        break;
                     }
                     else if (huidigLevel == 4)
                     {
                         
                     }
                 } else if (keyCollect == false) {
-
+                   
+                        keyCollect = false;
+                        LevelSelect.diamantA = true;
+                        Greenfoot.setWorld(new LevelSelect());
+                        break;
                 }
 
             }
@@ -425,9 +435,9 @@ public class Hero extends Mover {
     public void jumpFix() {
         {
 
-            if (Greenfoot.isKeyDown("space")  && (velocityY <= 0)) {
-                for (Tile tile : getIntersectingObjects(Tile.class)) {
-                    if (tile.getImage().toString().contains("grass")) {
+             if (Greenfoot.isKeyDown("Space") && (isTouching(Tile.class)) && (velocityY <= 0)) {
+                //for (Tile tile : getIntersectingObjects(Tile.class)) {
+                  //  if (tile.getImage().toString().contains("grass")) {
                 
                 velocityY = -20;
                 if (MyWorld.personage == 1)
@@ -445,7 +455,7 @@ public class Hero extends Mover {
             }
         }
     }
-}}
+//}}
 
     public void handleInput() {
        if (Greenfoot.isKeyDown("p")) {
