@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
  *
  * @author R. Springer
  */
-public class MyWorld extends World {
+public class Level1 extends World {
     static String personagestring;
     static String levelstring;
     static int personage;
@@ -25,24 +25,24 @@ public class MyWorld extends World {
      * Constructor for objects of class MyWorld.
      *
      */
-    public MyWorld() {
+    public Level1() {
         
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         while (startup == true){
         this.setBackground("bg.png");
         
-        if (startup == true)
-        {
-        personagestring = JOptionPane.showInputDialog("Kies een "
-                + "personage (1, 2 of 3)");
+        //if (startup == true)
+        //{
+        //personagestring = JOptionPane.showInputDialog("Kies een "
+        //        + "personage (1, 2 of 3)");
       
-        personage = Integer.parseInt(personagestring);
-        if (personage == 1 || personage == 2 || personage == 3)
-        {
-               startup = false;
-        }
-        }
+    //    personage = Integer.parseInt(personagestring);
+      //  if (personage == 1 || personage == 2 || personage == 3)
+        //{
+          //     startup = false;
+        //}
+        //}
 
  int [][]map ={
      {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,22,-1,-1},
@@ -279,9 +279,7 @@ public class MyWorld extends World {
 
     @Override
     public void act() {
-        if (firstStart == true){
-          Greenfoot.setWorld(new LevelSelect());
-        }
+       
         ce.update();
         if (Hero.diamantAdded == true){
         addObject (new Diamant(), diamantX, 150 );

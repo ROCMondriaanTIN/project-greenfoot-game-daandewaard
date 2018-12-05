@@ -17,7 +17,8 @@ public class StartScreen extends Mover
     
          public void act(){
    {
-    setImage("startup.png");
+   
+    
    if(Greenfoot.isKeyDown("space")){
    getWorld().removeObject(this);}}
    

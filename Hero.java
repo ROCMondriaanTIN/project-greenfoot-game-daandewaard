@@ -90,14 +90,16 @@ public class Hero extends Mover {
         gravity = 6.8;
         acc = 0.41;
         drag = 0.8;
-        if (MyWorld.personage == 1) {
-            setImage("p1.png");
-        } else if (MyWorld.personage == 2) {
-            setImage("p2_stand.png");
-        } else {
-
-            setImage("p3_stand.png");
-
+        switch (MyWorld.personage) {
+            case 1:
+                setImage("p1.png");
+                break;
+            case 2:
+                setImage("p2_stand.png");
+                break;
+            default:
+                setImage("p3_stand.png");
+                break;
         }
 
         mirror[0] = new GreenfootImage("p1_walk01.png");
@@ -423,7 +425,10 @@ public class Hero extends Mover {
     public void jumpFix() {
         {
 
-            if (Greenfoot.isKeyDown("space") && (isTouching(Tile.class) && (velocityY <= 0))) {
+            if (Greenfoot.isKeyDown("space")  && (velocityY <= 0)) {
+                for (Tile tile : getIntersectingObjects(Tile.class)) {
+                    if (tile.getImage().toString().contains("grass")) {
+                
                 velocityY = -20;
                 if (MyWorld.personage == 1)
                 {
@@ -440,6 +445,7 @@ public class Hero extends Mover {
             }
         }
     }
+}}
 
     public void handleInput() {
        if (Greenfoot.isKeyDown("p")) {
