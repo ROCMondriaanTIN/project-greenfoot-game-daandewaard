@@ -12,7 +12,9 @@ public class LevelSelect extends World
     public static boolean lvl3A;
     public static boolean lvl4A;
     public static boolean diamantA;
-
+    public static boolean isClicked;
+    public static boolean canAccesChest;
+  
     /**
      * Constructor for objects of class LevelSelect.
      * 
@@ -26,12 +28,16 @@ public class LevelSelect extends World
     }
     public void act()
     {
+        if (Hero.huidigLevel == 5)
+        {
+            canAccesChest = true;
+        }
          this.setBackground("levelBG.png");
          addObject(new Level1B(), 200, 350);
          addObject(new Level2B(), 400, 350);
          addObject(new Level3B(), 600, 350);
          addObject(new Level4B(), 800, 350);
+         addObject(new DiamantScreen(), 200, 550);
+         addObject(new InfoScreen(), 400, 550);
          
-         
-    }
-}
+    }}

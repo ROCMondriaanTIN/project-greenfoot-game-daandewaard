@@ -56,6 +56,7 @@ public class Hero extends Mover {
     private GreenfootImage p3run10 = new GreenfootImage("p3_walk10.png");
     private GreenfootImage p3run11 = new GreenfootImage("p3_walk11.png");
     public static boolean diamantAdded;
+    public static int diamanten;
     public static int huidigLevel = 1;
     public int Munten;
 
@@ -213,8 +214,7 @@ public class Hero extends Mover {
                     
                     JOptionPane.showMessageDialog(
                             null, "Je hebt " + Munten + " munten verzameld");
-                    Munten =0;
-                    aantalMunten=0;
+                    
                     getWorld().removeObject(tile);
                     if (huidigLevel == 1)
                     {
@@ -242,7 +242,7 @@ public class Hero extends Mover {
                     }
                     else if (huidigLevel == 4)
                     {
-                        
+                        huidigLevel = 5;
                     }
                 } else if (keyCollect == false) {
                    
@@ -258,6 +258,7 @@ public class Hero extends Mover {
             Tile tile = (Tile) actor;
             if (tile.getImage().toString().contains("gemYellow")) {
                 diamantAdded = true;
+                diamanten ++;
                 getWorld().removeObject(tile);
 
             }
@@ -317,8 +318,9 @@ public class Hero extends Mover {
 
                 if (levens == 0) {
 
-                    setLocation(300, 200);
-                }
+                    Greenfoot.setWorld(new GameOver());
+
+                            }
                 continue;
             }
         }
