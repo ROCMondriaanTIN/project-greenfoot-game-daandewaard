@@ -443,7 +443,7 @@ public class Hero extends Mover {
                 //for (Tile tile : getIntersectingObjects(Tile.class)) {
                   //  if (tile.getImage().toString().contains("grass")) {
                 
-                velocityY = -20;
+                velocityY = -16;
                 if (MyWorld.personage == 1)
                 {
                 setImage("p1_jump.png");
@@ -470,7 +470,7 @@ public class Hero extends Mover {
 
         if (Greenfoot.isKeyDown("a")) {
 
-            velocityX = -2;
+            velocityX = -4;
 
             animationCounter = animationCounter + 1;
             if (animationCounter % 5 == 0) {
@@ -485,7 +485,7 @@ public class Hero extends Mover {
            if (animationCounter % 5 == 0) {
                 animationRight();
             }
-            velocityX = 2;
+            velocityX = 4;
 
         }
 
