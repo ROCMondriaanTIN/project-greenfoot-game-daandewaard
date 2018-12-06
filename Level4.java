@@ -171,9 +171,9 @@ public class Level4 extends World {
         addObject(hero, 300, 800);
         //addObject(hero, 7000, 200);    
         //addObject(hero, 5000, 200);
-        addObject(new Enemy(), 6823, 1945);
-        addObject(new Enemy(), 3088, 2015);
-        addObject(new Enemy(), 7665, 1595);
+       addObject(new Enemy(), 1817, 2017);
+        addObject(new Enemy(), 4332, 2017);
+        addObject(new Enemy(), 5843, 1737);
         addObject(new KeyIcon(), 100, 100);
         addObject(new Punten(), 100, 200);
         addObject(new PuntenTientallen(), 75, 200);

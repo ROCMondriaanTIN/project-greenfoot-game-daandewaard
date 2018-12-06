@@ -171,9 +171,10 @@ public class Level1 extends World {
         //addObject(hero, 7000, 200);    
         //addObject(hero, 1582, 900);
         
-        addObject(new Enemy(), 1582, 757);
-        addObject(new Enemy(), 2343, 617);
-        addObject(new Enemy(), 5131, 1667);
+        addObject(new Enemy(), 1579, 1457);
+        addObject(new Enemy(), 3289, 2017);
+        addObject(new Enemy(), 7687, 1597);
+
         addObject(new KeyIcon(), 100, 100);
         addObject(new Punten(), 100, 200);
         addObject(new PuntenTientallen(), 75, 200);

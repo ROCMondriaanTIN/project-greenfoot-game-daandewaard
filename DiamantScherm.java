@@ -33,17 +33,17 @@ public void act(){
 this.setBackground("geenDiamanten.png");
 addObject(new TerugKnop(), 500, 500);
 }
-    else if (Hero.diamanten == 1 || Hero.diamanten == 2)
+    else if (Hero.diamanten < 4)
     {this.setBackground("aantalDiamanten.png");
-addObject(new TerugKnop(), 500, 500);}
-    else if (Hero.diamanten == 3 || Hero.diamanten == 4)
+addObject(new TerugKnop(), 500, 700);}
+    else if (Hero.diamanten > 3 && Hero.diamanten < 9)
     {
         this.setBackground("groteSchatkist.png");
-addObject(new TerugKnop(), 500, 500);
+addObject(new TerugKnop(), 500, 700);
     }
-    else if (Hero.diamanten == 5)
+    else if (Hero.diamanten > 8)
     {
         this.setBackground("alleDiamanten.png");
-addObject(new TerugKnop(), 500, 500);
+addObject(new TerugKnop(), 500, 700);
     }
 }}

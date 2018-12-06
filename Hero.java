@@ -56,7 +56,8 @@ public class Hero extends Mover {
     private GreenfootImage p3run10 = new GreenfootImage("p3_walk10.png");
     private GreenfootImage p3run11 = new GreenfootImage("p3_walk11.png");
     public static boolean diamantAdded;
-    public static int diamanten;
+    //public static int diamanten;
+    public static int diamanten = 1;
     public static int huidigLevel = 1;
     public int Munten;
 
@@ -242,13 +243,14 @@ public class Hero extends Mover {
                     }
                     else if (huidigLevel == 4)
                     {
-                        huidigLevel = 5;
+                        keyCollect = false;
+                        LevelSelect.canAccesChest = true;
+                        Greenfoot.setWorld(new LevelSelect());
+                        break;
                     }
                 } else if (keyCollect == false) {
                    
-                        keyCollect = false;
-                        LevelSelect.diamantA = true;
-                        Greenfoot.setWorld(new LevelSelect());
+                        
                         break;
                 }
 
