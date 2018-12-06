@@ -13,8 +13,8 @@ public class LevelSelect extends World
     public static boolean lvl4A;
     public static boolean diamantA;
     public static boolean isClicked;
-    public static boolean canAccesChest = true;
-    //public static boolean canAccesChest;
+    
+    public static boolean canAccesChest;
   
     /**
      * Constructor for objects of class LevelSelect.

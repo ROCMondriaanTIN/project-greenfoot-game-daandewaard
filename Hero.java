@@ -56,8 +56,8 @@ public class Hero extends Mover {
     private GreenfootImage p3run10 = new GreenfootImage("p3_walk10.png");
     private GreenfootImage p3run11 = new GreenfootImage("p3_walk11.png");
     public static boolean diamantAdded;
-    //public static int diamanten;
-    public static int diamanten = 1;
+    public static int diamanten;
+    
     public static int huidigLevel = 1;
     public int Munten;
 
@@ -427,7 +427,7 @@ public class Hero extends Mover {
 
                 if (levens == 0) {
 
-                    setLocation(300, 200);
+                    
                 }
                 continue;
             }
