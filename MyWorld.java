@@ -291,6 +291,9 @@ public class MyWorld extends World {
         if (Hero.levens == 0)
         {
             isGameOver = true;
+            LevelSelect.lvl2A = false;
+            LevelSelect.lvl3A = false;
+            LevelSelect.lvl4A = false;
             addObject (new StartScreen(), 500, 400);
            }
         
