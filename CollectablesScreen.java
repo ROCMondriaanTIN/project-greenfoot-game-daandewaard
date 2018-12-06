@@ -44,6 +44,8 @@ public class CollectablesScreen extends Levels
     {
          setImage("collectables.png");
         if (Greenfoot.mouseClicked(this)){
+            
+            
            Greenfoot.setWorld(new CollectablesScherm());
         
         

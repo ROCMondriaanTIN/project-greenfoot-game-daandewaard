@@ -48,81 +48,48 @@ public void act(){
         addObject (new Diamant(), diamantX, 440);
         diamantX += 70;
     }
-    if (Hero.diamanten == 1)
+    if (Hero.diamanten == 2)
     {
         addObject (new Diamant(), diamantX, 440);
         diamantX += 70;
     }
-        if (Hero.diamanten == 1)
+        if (Hero.diamanten == 3)
     {
         addObject (new Diamant(), diamantX, 440);
         diamantX += 70;
     }
-            if (Hero.diamanten == 1)
+            if (Hero.diamanten == 4)
     {
         addObject (new Diamant(), diamantX, 440);
         diamantX += 70;
     }
-                if (Hero.diamanten == 1)
+                if (Hero.diamanten == 5)
     {
         addObject (new Diamant(), diamantX, 440);
         diamantX += 70;
     }
-                    if (Hero.diamanten == 1)
+                    if (Hero.diamanten == 6)
     {
         addObject (new Diamant(), diamantX, 440);
         diamantX += 70;
     }
-                        if (Hero.diamanten == 1)
+                        if (Hero.diamanten == 7)
     {
         addObject (new Diamant(), diamantX, 440);
         diamantX += 70;
     }
-                            if (Hero.diamanten == 2)
+                            if (Hero.diamanten == 8)
     {
         addObject (new Diamant(), diamantX, 440);
         diamantX += 70;
     }
-                                if (Hero.diamanten == 3)
+                                if (Hero.diamanten == 9)
     {
         addObject (new Diamant(), diamantX, 440);
         diamantX += 70;
     }
-                                    if (Hero.diamanten == 4)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                                        if (Hero.diamanten == 5)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                                            if (Hero.diamanten == 6)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                                                if (Hero.diamanten == 7)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                                                    if (Hero.diamanten == 8)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                                                        if (Hero.diamanten == 9)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                                                            if (Hero.diamanten == 10)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
+                                    if (Hero.diamanten == 10){}
+    
 if (Hero.levens == 1)
 {
     addObject (new LevensIcon(),600 ,610);
