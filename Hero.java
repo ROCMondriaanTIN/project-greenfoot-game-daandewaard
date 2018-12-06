@@ -59,7 +59,7 @@ public class Hero extends Mover {
     public static int diamanten;
     
     public static int huidigLevel = 1;
-    public int Munten;
+    public static int Munten;
 
     public int animationCounter = 0;
     private int frame = 1;

@@ -37,5 +37,6 @@ public class LevelSelect extends World
          addObject(new Level4B(), 800, 350);
          addObject(new DiamantScreen(), 200, 550);
          addObject(new InfoScreen(), 400, 550);
+         addObject(new CollectablesScreen(), 600, 550);
          
     }}
