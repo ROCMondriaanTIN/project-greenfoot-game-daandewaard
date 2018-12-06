@@ -17,6 +17,8 @@ public class MyWorld extends World {
     public static boolean startup = true;
     public static boolean firstStart = true;
     public String codestring;
+    
+    
 
 
     private CollisionEngine ce;
@@ -35,9 +37,17 @@ public class MyWorld extends World {
         if (startup == true)
         {
         personagestring = JOptionPane.showInputDialog("Kies een "
-                + "personage (1, 2 of 3)");
+                + "personage (1 of 2)");
       
-        personage = Integer.parseInt(personagestring);
+        if (personagestring.equals("1"))
+        {
+            personage = 1;
+        }
+        else if (personagestring.equals("2"))
+        {
+            personagestring = "3";
+            personage = 3;
+        }
         if (personage == 1 || personage == 2 || personage == 3)
         {
                startup = false;
