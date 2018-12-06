@@ -313,7 +313,7 @@ public class Hero extends Mover {
                     setImage("p1.png");
                     geraakt = false;
 
-                    levens--;
+                    levens--; 
                     JOptionPane.showMessageDialog(
                             null, "Je hebt nog  " + (levens) + " levens");
                 }
@@ -326,7 +326,7 @@ public class Hero extends Mover {
                 continue;
             }
         }
-
+        
         {
 
             handleInput();
