@@ -43,52 +43,7 @@ public void act(){
     }
     addObject (new PuntenTientallen(), 600, 270);
     addObject (new Punten(), 650,270);
-    if (Hero.diamanten == 1)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-    if (Hero.diamanten == 2)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-        if (Hero.diamanten == 3)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-            if (Hero.diamanten == 4)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                if (Hero.diamanten == 5)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                    if (Hero.diamanten == 6)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                        if (Hero.diamanten == 7)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                            if (Hero.diamanten == 8)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                                if (Hero.diamanten == 9)
-    {
-        addObject (new Diamant(), diamantX, 440);
-        diamantX += 70;
-    }
-                                    if (Hero.diamanten == 10){}
+   
     
 if (Hero.levens == 1)
 {
@@ -109,6 +64,14 @@ if (Hero.levens == 4)
 if (Hero.levens == 5)
 {
     addObject (new LevensIcon(),850 ,610);
+}
+if (Hero.diamanten == 1)
+{
+    addObject (new Diamant(),600 ,675);
+}
+if (Hero.diamanten == 2)
+{
+    addObject (new Diamant(),625 ,320);
 }
     
     

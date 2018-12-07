@@ -148,10 +148,10 @@ public class Hero extends Mover {
     public void act() {
         updateOnGroundStats();
         //System.out.println(velocityY);
-        if (Greenfoot.isKeyDown("Q"))
-        {
-            setLocation(8000, 800);
-        }
+        //if (Greenfoot.isKeyDown("Q"))
+        //{
+         //   setLocation(8000, 800);
+        //}
         /*if (isTouching(Tile.class) == false && (velocityY <= 0))
         {
             if (MyWorld.personage == 1)
@@ -190,10 +190,10 @@ public class Hero extends Mover {
         
         // System.out.println(isTouching(Tile.class));
 
-        if (Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V")
-                && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")) {
-            velocityY = - 100;
-        }
+       // if (Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V")
+        //        && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")) {
+       //     velocityY = - 100;
+       // }
 
         jumpFix();
         for (Actor actor : getIntersectingObjects(Tile.class)) {
@@ -240,8 +240,7 @@ public class Hero extends Mover {
                     
                     
                     
-                    JOptionPane.showMessageDialog(
-                            null, "Je hebt " + Munten + " munten verzameld");
+                    
                     
                     getWorld().removeObject(tile);
                     if (huidigLevel == 1)
@@ -486,11 +485,11 @@ public class Hero extends Mover {
 //}}
 
     public void handleInput() {
-       if (Greenfoot.isKeyDown("p")) {
-            velocityY = -20;
-            animationCounter = animationCounter + 1;
+      // if (Greenfoot.isKeyDown("p")) {
+        //    velocityY = -20;
+        //    animationCounter = animationCounter + 1;
             
-        }
+       // }
 
         if (Greenfoot.isKeyDown("a")) {
 
@@ -862,4 +861,3 @@ public class Hero extends Mover {
         }
     }
 
-}
