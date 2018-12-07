@@ -30,24 +30,16 @@ public class MyWorld extends World {
     public MyWorld() {
         
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 800, 1, false);
+         super(1000, 800, 1, false);
         while (startup == true){
         this.setBackground("bg.png");
         
         if (startup == true)
         {
         personagestring = JOptionPane.showInputDialog("Kies een "
-                + "personage (1 of 2)");
+                + "personage (1, 2 of 3)");
       
-        if (personagestring.equals("1"))
-        {
-            personage = 1;
-        }
-        else if (personagestring.equals("2"))
-        {
-            personagestring = "3";
-            personage = 3;
-        }
+        personage = Integer.parseInt(personagestring);
         if (personage == 1 || personage == 2 || personage == 3)
         {
                startup = false;

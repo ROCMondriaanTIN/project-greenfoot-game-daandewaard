@@ -14,8 +14,8 @@ public class GameOver extends World
      * Constructor for objects of class LevelSelect.
      * 
      */
-    public GameOver()
-    {    
+    public GameOver() 
+    {     
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1); 
         
@@ -28,7 +28,7 @@ public class GameOver extends World
          LevelSelect.lvl3A =false;
          LevelSelect.lvl4A = false;
          if(Greenfoot.isKeyDown("space")){
-             Hero.levens = 2;
+             Hero.levens = 2; 
          Greenfoot.setWorld(new LevelSelect());}
          
          

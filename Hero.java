@@ -15,6 +15,7 @@ public class Hero extends Mover {
     private int walking = 1;
     private int status = 0;
     private String richting = "rechts";
+    public static boolean canCheck;
 
     private final double acc;
     private final double drag;
@@ -57,6 +58,7 @@ public class Hero extends Mover {
     private GreenfootImage p3run11 = new GreenfootImage("p3_walk11.png");
     public static boolean diamantAdded;
     public static int diamanten;
+    private boolean isOnGround;
     
     public static int huidigLevel = 1;
     public static int Munten;
@@ -92,16 +94,14 @@ public class Hero extends Mover {
         gravity = 6.8;
         acc = 0.41;
         drag = 0.8;
-        switch (MyWorld.personage) {
-            case 1:
-                setImage("p1.png");
-                break;
-            case 2:
-                setImage("p2_stand.png");
-                break;
-            default:
-                setImage("p3_stand.png");
-                break;
+        if (MyWorld.personage == 1) {
+            setImage("p1.png");
+        } else if (MyWorld.personage == 2) {
+            setImage("p2_stand.png");
+        } else {
+
+            setImage("p3_stand.png");
+
         }
 
         mirror[0] = new GreenfootImage("p1_walk01.png");
@@ -146,6 +146,8 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        updateOnGroundStats();
+        //System.out.println(velocityY);
         if (Greenfoot.isKeyDown("Q"))
         {
             setLocation(8000, 800);
@@ -204,6 +206,31 @@ public class Hero extends Mover {
 
             }
         }
+        for (Actor actor : getIntersectingObjects(Tile.class)) {
+            Tile tile = (Tile) actor;
+            if (tile.getImage().toString().contains("fence")) {
+                if (Greenfoot.isKeyDown("space"))
+                {
+                    velocityY = -16;
+                }
+
+                
+
+            }
+        }
+        for (Actor actor : getIntersectingObjects(Tile.class)) {
+            Tile tile = (Tile) actor;
+            if (tile.getImage().toString().contains("ladder")) {
+                if (Greenfoot.isKeyDown("space"))
+                {
+                    velocityY = -16;
+                }
+
+                
+
+            }
+        }
+        
         for (Actor actor : getIntersectingObjects(Tile.class)) {
             Tile tile = (Tile) actor;
             if (tile.getImage().toString().contains("lock_yellow")) {
@@ -436,7 +463,7 @@ public class Hero extends Mover {
     public void jumpFix() {
         {
 
-             if (Greenfoot.isKeyDown("Space") && (isTouching(Tile.class)) && (velocityY <= 0)) {
+             if (Greenfoot.isKeyDown("Space") && (isOnGround)) {
                 //for (Tile tile : getIntersectingObjects(Tile.class)) {
                   //  if (tile.getImage().toString().contains("grass")) {
                 
@@ -488,9 +515,8 @@ public class Hero extends Mover {
 
     }
 
-    private void animationRight() {
-//if (isTouching(Tile.class)== true)
-{
+   private void animationRight() {
+
         switch (MyWorld.personage) {
             case 1:
                 switch (teller) {
@@ -536,7 +562,6 @@ public class Hero extends Mover {
                         break;
                         
                     default:
-                        setImage(run1);
                         teller = 1;
                 }   break;
             case 2:
@@ -583,9 +608,7 @@ public class Hero extends Mover {
                         break;
                         
                     default:
-                        setImage(p2run1);
                         teller = 1;
-                        
                 }   break;
             default:
                 switch (teller) {
@@ -631,18 +654,14 @@ public class Hero extends Mover {
                         break;
                         
                     default:
-                        setImage(p3run1);
                         teller = 1;
-                        
                 }   break;
         }
 
     }
-    }
 
     private void animationLeft() {
-//if (isTouching(Tile.class)== true)
-{
+
         if (MyWorld.personage == 1) {
             switch (teller) {
                 case 1:
@@ -691,7 +710,6 @@ public class Hero extends Mover {
                     break;
 
                 default:
-                    setImage(mirror[0]);
                     teller = 1;
             }
 
@@ -743,7 +761,6 @@ public class Hero extends Mover {
                     break;
 
                 default:
-                    setImage(mirror[11]);
                     teller = 1;
             }
         } else {
@@ -794,13 +811,12 @@ public class Hero extends Mover {
                     break;
 
                 default:
-                    setImage(mirror[22]);
                     teller = 1;
             }
         }
 
     }
-    }
+
     public int getWidth() {
         return getImage().getWidth();
     }
@@ -813,6 +829,36 @@ public class Hero extends Mover {
     public void mirrorImg() {
         if (richting.equals("left")) {
            getImage().mirrorHorizontally();
+        }
+    }
+    private void updateOnGroundStats() {
+        
+            
+        int dx = getImage().getWidth() / 2;
+        int dy = getImage().getHeight() / 2 + 1;
+
+        //checks if here is not going up or down
+        if (velocityY != 0) {
+            isOnGround = false;
+            return;
+        }
+        //checks tile exacly under hero
+        for (Tile tile : getObjectsAtOffset(0, dy, Tile.class)) {
+            if (tile.isSolid) isOnGround = true;
+            break;
+        }
+        //checks if hero is on the edge of a block
+        if (!isOnGround) {
+            for (Tile tile : getObjectsAtOffset(dx - 3, dy, Tile.class)) {
+                if (tile.isSolid) isOnGround = true;
+                break;
+            }
+            if (!isOnGround) {
+                for (Tile tile : getObjectsAtOffset(dx * -1 + 3, dy, Tile.class)) {
+                    if (tile.isSolid) isOnGround = true;
+                    break;
+                }}
+            }
         }
     }
 
