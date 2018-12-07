@@ -319,6 +319,7 @@ public class Hero extends Mover {
                 }
 
                 if (levens == 0) {
+                    levens = 2;
 
                     Greenfoot.setWorld(new GameOver());
 
@@ -425,11 +426,7 @@ public class Hero extends Mover {
                             null, "Je hebt nog  " + (levens) + " levens");
                 }
 
-                if (levens == 0) {
-
-                    
-                }
-                continue;
+                
             }
         }
 

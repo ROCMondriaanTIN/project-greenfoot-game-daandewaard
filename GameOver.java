@@ -24,7 +24,11 @@ public class GameOver extends World
     public void act()
     {
          this.setBackground("gameover.png");
+         LevelSelect.lvl2A = false;
+         LevelSelect.lvl3A =false;
+         LevelSelect.lvl4A = false;
          if(Greenfoot.isKeyDown("space")){
+             Hero.levens = 2;
          Greenfoot.setWorld(new LevelSelect());}
          
          
