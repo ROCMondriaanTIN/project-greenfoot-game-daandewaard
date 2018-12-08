@@ -147,53 +147,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         updateOnGroundStats();
-        //System.out.println(velocityY);
-        //if (Greenfoot.isKeyDown("Q"))
-        //{
-         //   setLocation(8000, 800);
-        //}
-        /*if (isTouching(Tile.class) == false && (velocityY <= 0))
-        {
-            if (MyWorld.personage == 1)
-            {
-            setImage("p1_jump.png");
-            }
-            else if (MyWorld.personage == 2)
-            {
-                setImage("p2_jump.png");
-            }
-            else if (MyWorld.personage == 3)
-            {
-                setImage ("p3_jump.png");
-            }
-            hasJumped = true;
-        }
-        if (isTouching(Tile.class) && hasJumped == true)
-        {
-            if (MyWorld.personage == 1)
-            {
-            setImage("p1.png");
-            }
-            else if (MyWorld.personage == 2)
-            {
-                setImage("p2_stand.png");
-            }
-            else if (MyWorld.personage == 3)
-            {
-                setImage ("p3_stand.png");
-            }
-            hasJumped = false;
-        }
-        */
         
-        
-        
-        // System.out.println(isTouching(Tile.class));
-
-       // if (Greenfoot.isKeyDown("C") && Greenfoot.isKeyDown("V")
-        //        && Greenfoot.isKeyDown("B") && Greenfoot.isKeyDown("N")) {
-       //     velocityY = - 100;
-       // }
 
         jumpFix();
         for (Actor actor : getIntersectingObjects(Tile.class)) {
@@ -201,6 +155,7 @@ public class Hero extends Mover {
             if (tile.getImage().toString().contains("keyYellow")) {
                 getWorld().removeObject(tile);
                 keyCollect = true;
+                Greenfoot.playSound("coin.wav");
 
                 return;
 
@@ -235,6 +190,7 @@ public class Hero extends Mover {
             Tile tile = (Tile) actor;
             if (tile.getImage().toString().contains("lock_yellow")) {
                 if (keyCollect == true) {
+                    
                     JOptionPane.showMessageDialog(
                             null, "Level voltooid");
                     
@@ -286,6 +242,7 @@ public class Hero extends Mover {
             Tile tile = (Tile) actor;
             if (tile.getImage().toString().contains("gemYellow")) {
                 diamantAdded = true;
+                Greenfoot.playSound("coin.wav");
                 diamanten ++;
                 getWorld().removeObject(tile);
 
@@ -296,6 +253,7 @@ public class Hero extends Mover {
 
             if (tile.getImage().toString().contains("coinGold")) {
                 getWorld().removeObject(tile);
+                Greenfoot.playSound("coin.wav");
                 aantalMunten += 2;
                 Munten ++;
             }
@@ -305,6 +263,7 @@ public class Hero extends Mover {
 
             if (tile.getImage().toString().contains("coinSilver")) {
                 getWorld().removeObject(tile);
+                Greenfoot.playSound("coin.wav");
                 aantalMunten++;
                 Munten++;
             }
@@ -319,8 +278,7 @@ public class Hero extends Mover {
             if (getWorld().getObjects(Hero.class).size() != 0) {
                 //Tile tile = (Tile) actor;
                 if (tile.getImage().toString().contains("Water")) {
-                    Greenfoot.playSound("water.wav");
-                    Greenfoot.playSound("deathnew.wav");
+                    
                     while (pause != 0) {
                         geraakt = true;
                         if (MyWorld.personage == 1) {
@@ -368,7 +326,7 @@ public class Hero extends Mover {
             for (Actor enemy : getIntersectingObjects(Enemy.class)) {
                 if (enemy != null) {
                     if (isTouching(Tile.class)) {
-                        Greenfoot.playSound("deathnew.wav");
+                        
 
                         levens--;
                         JOptionPane.showMessageDialog(
@@ -384,51 +342,13 @@ public class Hero extends Mover {
                     
                 }
                 
-                /* for (Actor enemy2 : getIntersectingObjects(Enemy.class)) {
-                    if (enemy != null) {
-                        Greenfoot.playSound("deathnew.wav");
-                        while (pause != 0) {
-                            geraakt = true;
-                            setImage("p1_hurt.png");
-                            pause--;
-                            return;
-                        }
-                        pause = 50;
-                        setLocation(300, 200);
-                        setImage("p1.png");
-                    }
-                    geraakt = false;
-                    levens--;
-                    System.out.println(levens);
-                }
-                if (levens == 0) {
-                    getWorld().removeObject(this);
-                    
-                } 
-                for (Tile tile : getIntersectingObjects(Tile.class)){
-                    System.out.println(Tile.tileNum);
-                 if (Tile.tileNum == 46) 
-                 {
-                     while (pause != 0) {
-                        geraakt = true;
-                        setImage("p1_hurt.png");
-                        pause--;
-                        return;
-                    }
-                    pause = 50;
-                    setLocation(300, 200);
-                    setImage("p1.png");
-                     
-                } 
-                 
-                }
-                 */            }
+                            }
             for (Tile tile : getIntersectingObjects(Tile.class)) {
             if (getWorld().getObjects(Hero.class).size() != 0) {
                 //Tile tile = (Tile) actor;
                 if (tile.getImage().toString().contains("fireball")) {
                     
-                    Greenfoot.playSound("deathnew.wav");
+                    
                     while (pause != 0) {
                         geraakt = true;
                         if (MyWorld.personage == 1) {

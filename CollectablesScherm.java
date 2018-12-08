@@ -65,45 +65,45 @@ if (Hero.levens == 5)
 {
     addObject (new LevensIcon(),850 ,610);
 }
-if (Hero.diamanten == 1)
+if (Hero.diamanten >0)
 {
     addObject (new Diamant(),600 ,400);
 }
-if (Hero.diamanten == 2)
+if (Hero.diamanten >1)
 {
-    addObject (new Diamant(),625 ,400);
+    addObject (new Diamant(),630 ,400);
 }
-if (Hero.diamanten == 3)
+if (Hero.diamanten >2)
 {
-    addObject (new Diamant(),650 ,400);
+    addObject (new Diamant(),660 ,400);
 }
-if (Hero.diamanten == 4)
+if (Hero.diamanten >3)
 {
-    addObject (new Diamant(),675 ,400);
+    addObject (new Diamant(),690 ,400);
 }
-if (Hero.diamanten == 5)
+if (Hero.diamanten >4)
 {
-    addObject (new Diamant(),700 ,400);
+    addObject (new Diamant(),720 ,400);
 }
-if (Hero.diamanten == 6)
-{
-    addObject (new Diamant(),725 ,400);
-}
-if (Hero.diamanten == 7)
+if (Hero.diamanten >5)
 {
     addObject (new Diamant(),750 ,400);
 }
-if (Hero.diamanten == 8)
+if (Hero.diamanten >6)
 {
-    addObject (new Diamant(),775 ,400);
+    addObject (new Diamant(),780 ,400);
 }
-if (Hero.diamanten == 9)
+if (Hero.diamanten >7)
 {
-    addObject (new Diamant(),800 ,400);
+    addObject (new Diamant(),810 ,400);
 }
-if (Hero.diamanten == 10)
+if (Hero.diamanten >8)
 {
-    addObject (new Diamant(),825 ,400);
+    addObject (new Diamant(),840 ,400);
+}
+if (Hero.diamanten >9)
+{
+    addObject (new Diamant(),870 ,400);
 }
     
     
