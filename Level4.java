@@ -178,7 +178,7 @@ public class Level4 extends World {
         addObject(new Punten(), 100, 200);
         addObject(new PuntenTientallen(), 75, 200);
         addObject(new LevensIcon(), 100, 50);
-        addObject(new StartScreen(), 500, 400);
+        //addObject(new StartScreen(), 500, 400);
         this.setBackground("bg.png");
         
         

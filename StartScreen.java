@@ -16,20 +16,15 @@ public class StartScreen extends Mover
     
     
          public void act(){
-   {
    
-    
-   if(Greenfoot.isKeyDown("space")){
-   getWorld().removeObject(this);}}
    
-   if (MyWorld.isGameOver == true)
-   {
+   
        setImage("gameoverr.png");
        if(Greenfoot.isKeyDown("space")){
    getWorld().removeObject(this);
        MyWorld.isGameOver = false;}
    }
     }
-}
+
     
 

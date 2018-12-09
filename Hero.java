@@ -138,7 +138,7 @@ public class Hero extends Mover {
         mirror[31] = new GreenfootImage("p3_walk10.png");
         mirror[32] = new GreenfootImage("p3_walk11.png");
 
-        for (int i = 2; i < 32; i++) {
+        for (int i = 0; i < 33; i++) {
             mirror[i].mirrorHorizontally();
         }
 
@@ -191,14 +191,14 @@ public class Hero extends Mover {
             if (tile.getImage().toString().contains("lock_yellow")) {
                 if (keyCollect == true) {
                     
-                    JOptionPane.showMessageDialog(
-                            null, "Level voltooid");
+              
                     
                     
                     
                     
                     
                     getWorld().removeObject(tile);
+                    Greenfoot.playSound("level.wav");
                     if (huidigLevel == 1)
                     {
                         
@@ -624,8 +624,9 @@ public class Hero extends Mover {
                     teller++;
                     break;
                 case 11:
-                    setImage(mirror[10]);
-                    teller++;
+                    //setImage(mirror[10]);
+                    //teller++;
+                    teller = 1;
                     break;
 
                 default:
