@@ -59,6 +59,7 @@ public class Hero extends Mover {
     public static boolean diamantAdded;
     public static int diamanten;
     private boolean isOnGround;
+    public static boolean isLeft;
     
     public static int huidigLevel = 1;
     public static int Munten;
@@ -388,17 +389,29 @@ public class Hero extends Mover {
                 
                 velocityY = -16;
                 if (MyWorld.personage == 1)
+                if (isLeft)
+                {
+                    setImage("p1_jumpM.png");
+                }
+                else{
                 {
                 setImage("p1_jump.png");
                 }
+            }
                 else if (MyWorld.personage == 2)
+                if (isLeft){
+                setImage("p2_jumpM.png");}
+                else{
                 {
                     setImage("p2_jump.png");
-                }
+                }}
                 else
                 {
+                    if (isLeft){
+                        setImage("p3_jumpM.png");}
+                        else{
                     setImage("p3_jump.png");
-                }
+                }}
             }
         }
     }
@@ -412,7 +425,7 @@ public class Hero extends Mover {
        // }
 
         if (Greenfoot.isKeyDown("a")) {
-
+               isLeft = true;
             velocityX = -4;
 
             animationCounter = animationCounter + 1;
@@ -422,7 +435,7 @@ public class Hero extends Mover {
             }
 //mirrorImg();
         } else if (Greenfoot.isKeyDown("d")) {
-
+               isLeft = false;
             animationCounter = animationCounter + 1;
     
            if (animationCounter % 5 == 0) {
