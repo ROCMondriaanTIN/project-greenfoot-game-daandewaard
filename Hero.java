@@ -199,7 +199,7 @@ public class Hero extends Mover {
                     
                     
                     getWorld().removeObject(tile);
-                    Greenfoot.playSound("level.wav");
+                    Greenfoot.playSound("coin.wav");
                     if (huidigLevel == 1)
                     {
                         
